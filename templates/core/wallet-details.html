@@ -1,0 +1,164 @@
+{% extends "partials/auth.html" %}
+{% load static %}
+{% block title %}FideleFinance - Payment Processing{% endblock title %}
+{% block content %}
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast=""
+  data-pc-theme="light">
+  <!-- [ Pre-loader ] start -->
+  <div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+
+  <!-- [ Main Content ] start -->
+  <div class="maintenance-block">
+    <div class="container">
+      <div class="row">
+        <!-- [ sample-page ] start -->
+        <div class="col-sm-12">
+          <div class="card construction-card">
+            <div class="card-body">
+              <div class="construction-image-block">
+                <div class="row justify-content-center">
+                  <div class="col-10">
+                    <img class="img-fluid" src="https://ableproadmin.com/assets/images/pages/img-cunstruct-2.svg"
+                      alt="img">
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h1 class="mt-4"><b>The payment processing is seamlessly automated for your convenience.</b></h1>
+                <div class="text-center mt-2">
+                  <h5 class="text-primary">Transaction Hash-code Received</h5>
+                  <p class="text-muted">Your transaction was successfully received by our team, Kindly wait for verification which takes 10-15 mins and afterwards your account will be funded.</p>
+                </div>
+                 
+                <button type="button" onclick="window.location.href='/app/dashboard';" class="btn btn-primary mb-3">Back To Home</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [ sample-page ] end -->
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+  <!-- [ Main Content ] end -->
+  <!-- Required Js -->
+  <script src="assets/js/plugins/popper.min.js"></script>
+  <script src="assets/js/plugins/simplebar.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.min.js"></script>
+  <script src="assets/js/fonts/custom-font.js"></script>
+  <script src="assets/js/pcoded.js"></script>
+  <script src="assets/js/plugins/feather.min.js"></script>
+
+
+
+
+
+  <script>layout_change('light');</script>
+
+
+
+
+  <script>layout_theme_contrast_change('false');</script>
+
+
+
+
+
+
+  <div class="pct-c-btn">
+    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pc_layout">
+      <i class="ph-duotone ph-gear-six"></i>
+    </a>
+  </div>
+  <div class="offcanvas border-0 pct-offcanvas offcanvas-end" tabindex="-1" id="offcanvas_pc_layout">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Settings</h5>
+      <button type="button" class="btn btn-icon btn-link-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i
+          class="ti ti-x"></i></button>
+    </div>
+    <div class="pct-body customizer-body">
+      <div class="offcanvas-body py-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="pc-dark">
+              <h6 class="mb-1">Theme Mode</h6>
+              <p class="text-muted text-sm">Choose light or dark mode or Auto</p>
+              <div class="row theme-color theme-layout">
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn active" data-value="true" onclick="layout_change('light');"
+                      data-bs-toggle="tooltip" title="Light">
+                      <svg class="pc-icon text-warning">
+                        <use xlink:href="#custom-sun-1"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn" data-value="false" onclick="layout_change('dark');"
+                      data-bs-toggle="tooltip" title="Dark">
+                      <svg class="pc-icon">
+                        <use xlink:href="#custom-moon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn" data-value="default" onclick="layout_change_default();"
+                      data-bs-toggle="tooltip"
+                      title="Automatically sets the theme based on user's operating system's color scheme.">
+                      <span class="pc-lay-icon d-flex align-items-center justify-content-center">
+                        <i class="ph-duotone ph-cpu"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <h6 class="mb-1">Theme Contrast</h6>
+            <p class="text-muted text-sm">Choose theme contrast</p>
+            <div class="row theme-contrast">
+              <div class="col-6">
+                <div class="d-grid">
+                  <button class="preset-btn btn" data-value="true" onclick="layout_theme_contrast_change('true');"
+                    data-bs-toggle="tooltip" title="True">
+                    <svg class="pc-icon">
+                      <use xlink:href="#custom-mask"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-grid">
+                  <button class="preset-btn btn active" data-value="false"
+                    onclick="layout_theme_contrast_change('false');" data-bs-toggle="tooltip" title="False">
+                    <svg class="pc-icon">
+                      <use xlink:href="#custom-mask-1-outline"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        
+          <li class="list-group-item">
+            <div class="d-grid">
+              <button class="btn btn-light-danger" id="layoutreset">Reset Layout</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock content %}

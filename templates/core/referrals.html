@@ -1,0 +1,599 @@
+{% extends "partials/auth.html" %}
+{% load static %}
+{% block title %}Referrals – Earn Rewards by Inviting Others{% endblock title %}
+{% block content %}
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast=""
+  data-pc-theme="light">
+  <!-- [ Pre-loader ] start -->
+  <div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+  <!-- [ Sidebar Menu ] start -->
+  {% include "include/appnav.html" %}
+
+  <!-- [ Sidebar Menu ] end --> <!-- [ Header Topbar ] start -->
+  <header class="pc-header">
+    <div class="header-wrapper"> <!-- [Mobile Media Block] start -->
+      <div class="me-auto pc-mob-drp">
+        <ul class="list-unstyled">
+          <!-- ======= Menu collapse Icon ===== -->
+          <li class="pc-h-item pc-sidebar-collapse">
+            <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
+              <i class="ti ti-menu-2"></i>
+            </a>
+          </li>
+          <li class="pc-h-item pc-sidebar-popup">
+            <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
+              <i class="ti ti-menu-2"></i>
+            </a>
+          </li>
+          <li class="dropdown pc-h-item">
+            <a class="pc-head-link dropdown-toggle arrow-none m-0 trig-drp-search" data-bs-toggle="dropdown" href="#"
+              role="button" aria-haspopup="false" aria-expanded="false">
+              <svg class="pc-icon">
+                <use xlink:href="#custom-search-normal-1"></use>
+              </svg>
+            </a>
+            <div class="dropdown-menu pc-h-dropdown drp-search">
+              <form class="px-3 py-2">
+                <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . ." />
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- [Mobile Media Block end] -->
+      <div class="ms-auto">
+        <ul class="list-unstyled">
+          <li class="dropdown pc-h-item">
+            <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button"
+              aria-haspopup="false" aria-expanded="false">
+              <svg class="pc-icon">
+                <use xlink:href="#custom-sun-1"></use>
+              </svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+              <a href="#!" class="dropdown-item" onclick="layout_change('dark')">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-moon"></use>
+                </svg>
+                <span>Dark</span>
+              </a>
+              <a href="#!" class="dropdown-item" onclick="layout_change('light')">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-sun-1"></use>
+                </svg>
+                <span>Light</span>
+              </a>
+              <a href="#!" class="dropdown-item" onclick="layout_change_default()">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-setting-2"></use>
+                </svg>
+                <span>Default</span>
+              </a>
+            </div>
+          </li>
+          <li class="dropdown pc-h-item">
+            <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button"
+              aria-haspopup="false" aria-expanded="false">
+              <svg class="pc-icon">
+                <use xlink:href="#custom-setting-2"></use>
+              </svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+           <a href="{% url "core:profile" %}" class="dropdown-item">
+                <i class="ti ti-user"></i>
+                <span>My Account</span>
+              </a>
+              <a href="{% url "core:profile" %}" class="dropdown-item">
+                <i class="ti ti-settings"></i>
+                <span>Settings</span>
+              </a>
+              <a href="#!" class="dropdown-item">
+                <i class="ti ti-headset"></i>
+                <span>Support</span>
+              </a>
+              <a href="{% url "userauths:lockscreen" %}" class="dropdown-item">
+                <i class="ti ti-lock"></i>
+                <span>Lock Screen</span>
+              </a>
+              <a href="/logout" class="dropdown-item">
+                <i class="ti ti-power"></i>
+                <span>Logout</span>
+              </a>
+            </div>
+          </li>
+       
+         
+          <li class="dropdown pc-h-item header-user-profile">
+            <a class="pc-head-link dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button"
+              aria-haspopup="false" data-bs-auto-close="outside" aria-expanded="false">
+              <img src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="user-image" class="user-avtar" />
+            </a>
+            <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
+              <div class="dropdown-header d-flex align-items-center justify-content-between">
+                <h5 class="m-0">Profile</h5>
+              </div>
+              <div class="dropdown-body">
+                <div class="profile-notification-scroll position-relative" style="max-height: calc(100vh - 225px)">
+                  <div class="d-flex mb-1">
+                    <div class="flex-shrink-0">
+                      <img src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="user-image" class="user-avtar wid-35" />
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h6 class="mb-1">{{request.user.username|truncatechars:"20"}}</h6>
+                      <span><a href="#" class="__cf_email__"
+                          data-cfemail="c7a4a6b5b4a8a9e9a3a6b5b5aea987a4a8aab7a6a9bee9aea8">[email&#160;protected]</a></span>
+                    </div>
+                  </div>
+                  <hr class="border-secondary border-opacity-50" />
+                  <div class="card">
+                    <div class="card-body py-3">
+                      <div class="d-flex align-items-center justify-content-between">
+                        <h5 class="mb-0 d-inline-flex align-items-center"><svg class="pc-icon text-muted me-2">
+                            <use xlink:href="#custom-notification-outline"></use>
+                          </svg>Notification</h5>
+                        <div class="form-check form-switch form-check-reverse m-0">
+                          <input class="form-check-input f-18" type="checkbox" role="switch" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-span">Manage</p>
+                   <a href="/app/profile" class="dropdown-item">
+                    <span>
+                      <svg class="pc-icon text-muted me-2">
+                        <use xlink:href="#custom-setting-outline"></use>
+                      </svg>
+                      <span>Settings</span>
+                    </span>
+                  </a>
+                  
+                  <a href="/app/profile" class="dropdown-item">
+                    <span>
+                      <svg class="pc-icon text-muted me-2">
+                        <use xlink:href="#custom-lock-outline"></use>
+                      </svg>
+                      <span>Change Password</span>
+                    </span>
+                  </a>
+                 <hr class="border-secondary border-opacity-50" />
+                  <div class="d-grid mb-3">
+                    <button class="btn btn-primary">
+                      <svg class="pc-icon me-2">
+                        <use xlink:href="#custom-logout-1-outline"></use>
+                      </svg>Logout
+                    </button>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- [ Header ] end -->
+
+
+
+  <!-- [ Main Content ] start -->
+  <div class="pc-container">
+    <div class="pc-content">
+      <!-- [ breadcrumb ] start -->
+      <div class="page-header">
+        <div class="page-block">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/app/dashboard">Home</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0)">App</a></li>
+                <li class="breadcrumb-item" aria-current="page">Referrals</li>
+              </ul>
+            </div>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}}" id="alert">
+                <strong>{{ message }}</strong>
+            </div>
+          
+            {% endfor %}
+            {% endif %}
+            <div class="col-md-12">
+              <div class="page-header-title">
+                <h2 class="mb-0">{{referred_users_count}} Referral{{referred_users_count|pluralize}}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [ breadcrumb ] end -->
+
+      <!-- [ Main Content ] start -->
+      <div class="row">
+        <!-- [ sample-page ] start -->
+        <div class="col-sm-12">
+          <div class="card table-card">
+            <div class="card-body">
+            
+              <div class="table-responsive">
+                <table class="table table-hover" id="pc-dt-simple">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>You referred</th>
+                
+                      <th>Total referral bonus</th>
+                      
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for r in referred_users %}
+                    <tr>
+                      <td>{{forloop.counter}}</td>
+                      <td>
+                        <div class="row">
+                          
+                          <div class="col">
+                            <h6 class="mb-0">{{r.username}}</h6>
+                           
+                          </div>
+                        </div>
+                      </td>
+                      <td>{{current_user_total_ref}}</td>
+                      
+                 
+                      
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ sample-page ] end -->
+      </div>
+      <!-- [ Main Content ] end -->
+    </div>
+  </div>
+  <div class="modal fade" id="customer-modal" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="mb-0">Customer Details</h5>
+          <a href="#" class="avtar avtar-s btn-link-danger btn-pc-default" data-bs-dismiss="modal">
+            <i class="ti ti-x f-20"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-body position-relative">
+                  <div class="position-absolute end-0 top-0 p-3">
+                    <span class="badge bg-primary">Single</span>
+                  </div>
+                  <div class="text-center mt-3">
+                    <div class="chat-avtar d-inline-flex mx-auto">
+                      <img class="rounded-circle img-fluid wid-60" src="{% static 'assets/images/user/avatar-5.jpg' %}"
+                        alt="User image">
+                    </div>
+                    <h5 class="mb-0">Aaron Poole</h5>
+                    <p class="text-muted text-sm">Manufacturing Director</p>
+                    <hr class="my-3 border border-secondary-subtle">
+                    <div class="row g-3">
+                      <div class="col-4">
+                        <h5 class="mb-0">45</h5>
+                        <small class="text-muted">Age</small>
+                      </div>
+                      <div class="col-4 border border-top-0 border-bottom-0">
+                        <h5 class="mb-0">86%</h5>
+                        <small class="text-muted">Progress</small>
+                      </div>
+                      <div class="col-4">
+                        <h5 class="mb-0">7634</h5>
+                        <small class="text-muted">Visits</small>
+                      </div>
+                    </div>
+                    <hr class="my-3 border border-secondary-subtle">
+                    <div class="d-inline-flex align-items-center justify-content-between w-100 mb-3">
+                      <i class="ti ti-mail"></i>
+                      <p class="mb-0"><a href="https://ableproadmin.com/cdn-cgi/l/email-protection" class="__cf_email__"
+                          data-cfemail="7e1c113e19131f1712501d1113">[email&#160;protected]</a></p>
+                    </div>
+                    <div class="d-inline-flex align-items-center justify-content-between w-100 mb-3">
+                      <i class="ti ti-phone"></i>
+                      <p class="mb-0">+1 (247) 849-6968</p>
+                    </div>
+                    <div class="d-inline-flex align-items-center justify-content-between w-100 mb-3">
+                      <i class="ti ti-map-pin"></i>
+                      <p class="mb-0">Lesotho</p>
+                    </div>
+                    <div class="d-inline-flex align-items-center justify-content-between w-100">
+                      <i class="ti ti-link"></i>
+                      <a href="#" class="link-primary">
+                        <p class="mb-0">https://anshan.dh.url</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="card">
+                <div class="card-header">
+                  <h5>Personal Details</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0 pt-0">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p class="mb-1 text-muted">Full Name</p>
+                          <h6 class="mb-0">Aaron Poole</h6>
+                        </div>
+                        <div class="col-md-6">
+                          <p class="mb-1 text-muted">Father Name</p>
+                          <h6 class="mb-0">Mr. Ralph Sabatini</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item px-0">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p class="mb-1 text-muted">Country</p>
+                          <h6 class="mb-0">Lesotho</h6>
+                        </div>
+                        <div class="col-md-6">
+                          <p class="mb-1 text-muted">Zip Code</p>
+                          <h6 class="mb-0">247 849</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item px-0 pb-0">
+                      <p class="mb-1 text-muted">Address</p>
+                      <h6 class="mb-0">507 Sulnek Grove, Tudzovgeh, United States - 37173</h6>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <h5>About me</h5>
+                </div>
+                <div class="card-body">
+                  <p class="mb-0">Hello, I’m Aaron Poole Manufacturing Director based in international company, Void
+                    jiidki me na fep juih ced gihhiwi launke cu mig tujum peodpo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="customer-edit_add-modal" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="mb-0">Edit Customer</h5>
+          <a href="#" class="avtar avtar-s btn-link-danger btn-pc-default" data-bs-dismiss="modal">
+            <i class="ti ti-x f-20"></i>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-3 text-center">
+              <div class="chat-avtar d-inline-flex mx-auto">
+                <img class="rounded-circle img-fluid wid-70" src="{% static 'assets/images/user/avatar-5.jpg' %}" alt="User image">
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Status</label>
+                <select class="form-select">
+                  <option>Select Status</option>
+                  <option>Complicated</option>
+                  <option>Single</option>
+                  <option>Relationship</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Location</label>
+                <textarea class="form-control" rows="3" placeholder="Enter Location"></textarea>
+              </div>
+              <div class="form-check form-switch d-flex align-items-center justify-content-between p-0">
+                <label class="form-check-label h5 pe-3 mb-0" for="customSwitchemlnot1">Make Contact Info Public
+                  <span class="text-muted w-75 d-block text-sm f-w-400 mt-2">Means that anyone viewing your profile will
+                    be able to see your contacts details</span>
+                </label>
+                <input class="form-check-input h4 m-0 position-relative flex-shrink-0" type="checkbox"
+                  id="customSwitchemlnot1" checked="">
+              </div>
+              <hr class="my-3 border border-secondary-subtle">
+              <div class="form-check form-switch d-flex align-items-center justify-content-between p-0">
+                <label class="form-check-label h5 pe-3 mb-0" for="customSwitchemlnot2">Available to hire
+                  <span class="text-muted w-75 d-block text-sm f-w-400 mt-2">Toggling this will let your teammates know
+                    that you are available for acquiring new projects</span>
+                </label>
+                <input class="form-check-input h4 m-0 position-relative flex-shrink-0" type="checkbox"
+                  id="customSwitchemlnot2" checked="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <ul class="list-inline me-auto mb-0">
+            <li class="list-inline-item align-bottom">
+              <a href="#" class="avtar avtar-s btn-link-danger btn-pc-default w-sm-auto" data-bs-toggle="tooltip"
+                title="Delete">
+                <i class="ti ti-trash f-18"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="flex-grow-1 text-end">
+            <button type="button" class="btn btn-link-danger btn-pc-default" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+  <footer class="pc-footer">
+    <div class="footer-wrapper container-fluid">
+      <div class="row">
+        <div class="col my-1">
+          
+        </div>
+        <div class="col-auto my-1">
+          <ul class="list-inline footer-link mb-0">
+            <li class="list-inline-item"><a href="https://ableproadmin.com/index.html">Home</a></li>
+           
+            <li class="list-inline-item"><a href="https://phoenixcoded.authordesk.app/" target="_blank">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- Required Js -->
+  <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/popper.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/simplebar.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/fonts/custom-font.js' %}"></script>
+  <script src="{% static 'assets/js/pcoded.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/feather.min.js' %}"></script>
+
+
+
+
+
+  <script>layout_change('light');</script>
+
+
+
+
+  <script>layout_theme_contrast_change('false');</script>
+
+
+
+  <script>change_box_container('false');</script>
+
+
+
+  <!-- [Page Specific JS] start -->
+  <script src="{% static 'assets/js/plugins/simple-datatables.js' %}"></script>
+  <script>
+    const dataTable = new simpleDatatables.DataTable('#pc-dt-simple', {
+      sortable: false,
+      perPage: 5
+    });
+  </>
+  <!-- [Page Specific JS] end -->
+  <div class="pct-c-btn">
+    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pc_layout">
+      <i class="ph-duotone ph-gear-six"></i>
+    </a>
+  </div>
+  <div class="offcanvas border-0 pct-offcanvas offcanvas-end" tabindex="-1" id="offcanvas_pc_layout">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Settings</h5>
+      <button type="button" class="btn btn-icon btn-link-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i
+          class="ti ti-x"></i></button>
+    </div>
+    <div class="pct-body customizer-body">
+      <div class="offcanvas-body py-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="pc-dark">
+              <h6 class="mb-1">Theme Mode</h6>
+              <p class="text-muted text-sm">Choose light or dark mode or Auto</p>
+              <div class="row theme-color theme-layout">
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn active" data-value="true" onclick="layout_change('light');"
+                      data-bs-toggle="tooltip" title="Light">
+                      <svg class="pc-icon text-warning">
+                        <use xlink:href="#custom-sun-1"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn" data-value="false" onclick="layout_change('dark');"
+                      data-bs-toggle="tooltip" title="Dark">
+                      <svg class="pc-icon">
+                        <use xlink:href="#custom-moon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn" data-value="default" onclick="layout_change_default();"
+                      data-bs-toggle="tooltip"
+                      title="Automatically sets the theme based on user's operating system's color scheme.">
+                      <span class="pc-lay-icon d-flex align-items-center justify-content-center">
+                        <i class="ph-duotone ph-cpu"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <h6 class="mb-1">Theme Contrast</h6>
+            <p class="text-muted text-sm">Choose theme contrast</p>
+            <div class="row theme-contrast">
+              <div class="col-6">
+                <div class="d-grid">
+                  <button class="preset-btn btn" data-value="true" onclick="layout_theme_contrast_change('true');"
+                    data-bs-toggle="tooltip" title="True">
+                    <svg class="pc-icon">
+                      <use xlink:href="#custom-mask"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-grid">
+                  <button class="preset-btn btn active" data-value="false"
+                    onclick="layout_theme_contrast_change('false');" data-bs-toggle="tooltip" title="False">
+                    <svg class="pc-icon">
+                      <use xlink:href="#custom-mask-1-outline"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="d-grid">
+              <button class="btn btn-light-danger" id="layoutreset">Reset Layout</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock content %}

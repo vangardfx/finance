@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- [Head] start -->
+<head>
+  <title>{% block title %}{% endblock title %}</title>
+  <!-- [Meta] -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="FideleFinance is your trusted platform for Forex trading, cryptocurrency investment, stock trading, and innovative financial strategies to maximize your wealth.">
+  <meta name="keywords" content="Forex trading, Cryptocurrency investment, Stock trading, Financial strategies, Online trading platform, FideleFinance, Investment solutions, Copy-trading, Commodities, Wealth management">
+  <meta name="author" content="FideleFinance">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="FideleFinance - Your Gateway to Financial Independence">
+  <meta property="og:description" content="Experience advanced trading and investment strategies with FideleFinance. Trade Forex, cryptocurrencies, stocks, and more, all from one platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.fidelefinance.com">
+  <meta property="og:image" content="https://www.fidelefinance.com/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FideleFinance - Your Gateway to Financial Independence">
+  <meta name="twitter:description" content="Join FideleFinance for secure and efficient trading in Forex, crypto, stocks, and more. Empower your financial future.">
+  <meta name="twitter:image" content="https://www.fidelefinance.com/images/twitter-image.jpg">
+  
+
+  <!-- [Favicon] icon -->
+  <link rel="icon" href="https://ableproadmin.com/assets/images/favicon.svg" type="image/x-icon"> <!-- [Font] Family -->
+<link rel="stylesheet" href="{% static "assets/fonts/inter/inter.css" %}" id="main-font-link" />
+<!-- [Tabler Icons] https://tablericons.com -->
+<link rel="stylesheet" href="{% static "assets/fonts/tabler-icons.min.css" %}" >
+<!-- [Feather Icons] https://feathericons.com -->
+<link rel="stylesheet" href="{% static "assets/fonts/feather.css" %}" >
+<!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+<link rel="stylesheet" href="{% static "assets/fonts/fontawesome.css" %}" >
+<!-- [Material Icons] https://fonts.google.com/icons -->
+<link rel="stylesheet" href="{% static "assets/fonts/material.css" %}" >
+<!-- [Template CSS Files] -->
+<link rel="stylesheet" href="{% static "assets/css/style.css" %}" id="main-style-link" >
+<link rel="stylesheet" href="{% static "assets/css/style-preset.css" %}" >
+
+
+</head>
+<!-- [Head] end -->
+ {% block content %}
+ 
+ 
+ 
+ 
+ {% endblock content %}
+
+ 
+<div class="offcanvas border-0 pct-offcanvas offcanvas-end" tabindex="-1" id="offcanvas_pc_layout">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Settings</h5>
+      <button type="button" class="btn btn-icon btn-link-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i
+          class="ti ti-x"></i></button>
+    </div>
+    <div class="pct-body customizer-body">
+      <div class="offcanvas-body py-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="pc-dark">
+              <h6 class="mb-1">Theme Mode</h6>
+              <p class="text-muted text-sm">Choose light or dark mode or Auto</p>
+              <div class="row theme-color theme-layout">
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn active" data-value="true" onclick="layout_change('light');" data-bs-toggle="tooltip" title="Light">
+                      <svg class="pc-icon text-warning">
+                        <use xlink:href="#custom-sun-1"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn" data-value="false" onclick="layout_change('dark');" data-bs-toggle="tooltip" title="Dark">
+                      <svg class="pc-icon">
+                        <use xlink:href="#custom-moon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn" data-value="default" onclick="layout_change_default();"
+                      data-bs-toggle="tooltip" title="Automatically sets the theme based on user's operating system's color scheme.">
+                      <span class="pc-lay-icon d-flex align-items-center justify-content-center">
+                        <i class="ph-duotone ph-cpu"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <h6 class="mb-1">Theme Contrast</h6>
+            <p class="text-muted text-sm">Choose theme contrast</p>
+            <div class="row theme-contrast">
+              <div class="col-6">
+                <div class="d-grid">
+                  <button class="preset-btn btn" data-value="true" onclick="layout_theme_contrast_change('true');" data-bs-toggle="tooltip" title="True">
+                    <svg class="pc-icon">
+                      <use xlink:href="#custom-mask"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-grid">
+                  <button class="preset-btn btn active" data-value="false" onclick="layout_theme_contrast_change('false');" data-bs-toggle="tooltip" title="False">
+                    <svg class="pc-icon">
+                      <use xlink:href="#custom-mask-1-outline"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+       
+  
+       
+          <li class="list-group-item">
+            <div class="d-grid">
+              <button class="btn btn-light-danger" id="layoutreset">Reset Layout</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </body>
+  <!-- [Body] end -->
+  
+  </html>

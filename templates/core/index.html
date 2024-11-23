@@ -1,0 +1,1166 @@
+{% extends "partials/base.html" %}
+{% load static humanize %}
+{% block title %}FideleFinance – Your Gateway to Financial Independence{% endblock title %}
+{% block content %}
+
+<style>
+	@media (max-width: 767px) {
+		.custom-margin-top {
+			margin-top: 60px;
+		}
+	}
+	@media (max-width: 767px) {
+		.custom-margin-top-2 {
+			margin-top: 60px;
+		}
+	}
+	@media (min-width: 767px) {
+		.custom-margin-top {
+			margin-top: 85px;
+		}
+		.custom-margin-top-2 {
+			margin-top: 85px;
+		}
+		.custom-margin-top-3 {
+			margin-top: 85px;
+		}
+	}
+	@media (max-width: 767px) {
+		.custom-margin-top-3 {
+			margin-top: 60px;
+		}
+		.custom-h1{
+			font-size: 22px;
+
+		}
+		.header-p-tag{
+			font-size: 11px !important;
+		}
+
+	}
+	.header-p-tag{
+		font-size: 18px;
+		font-weight: 400;
+	}
+	.vhg7f{
+		font-family: 'Manrope', sans-serif; 
+		font-size: 15px; font-weight: 600;
+		width: 150px;
+		height: 50px;
+	}
+	@media (max-width: 580px){
+		.vhg7f{
+			width: 250px;
+		}
+	}
+</style>
+<style>
+	.custom-h1, .header-p-tag {
+		opacity: 0.5; /* Initially hide the elements */
+		transform: translateY(70px); /* Move elements down by 50px */
+		transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apply transition */
+	}
+	.vhg7f {
+		opacity: 0.8; /* Initially hide the elements */
+		transform: translateY(80px); /* Move elements down by 50px */
+		transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apply transition */
+	}
+</style>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	  // Function to animate elements when they enter the viewport
+	  function animateOnScroll(entries, observer) {
+		entries.forEach(entry => {
+		  if (entry.isIntersecting) {
+			// Apply animation
+			entry.target.style.transition = "opacity 0.8s, transform 0.8s";
+			entry.target.style.opacity = "1";
+			entry.target.style.transform = "translateY(0)";
+			
+			// Stop observing the element after animation
+			observer.unobserve(entry.target);
+		  }
+		});
+	  }
+  
+	  // Create an Intersection Observer instance
+	  const observer = new IntersectionObserver(animateOnScroll, { threshold: 0.5 });
+  
+	  // Select elements to observe
+	  const elements = document.querySelectorAll(".custom-h1, .header-p-tag, .uicore-btn");
+	  
+	  // Apply initial styles and observe each element
+	  elements.forEach(element => {
+		element.style.opacity = "0";
+		element.style.transform = "translateY(20px)"; // Initial position for animation
+		observer.observe(element);
+	  });
+	});
+  </script>
+  
+			<div id="content" class="uicore-content">
+				<script id="uicore-page-transition">window.onload = window.onpageshow = function () { }; </script>
+				<div id="primary" class="content-area">
+					<article id="post-13" class="post-13 page type-page status-publish hentry">
+						<main class="entry-content">
+							<div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
+								<div class="carousel-inner" >
+								  <div class="carousel-item active" data-bs-interval="7000">
+									<img src="{% static "assets/images/photo-1462899006636-339e08d1844e.jpg" %}" 
+									style="height: 600px;" class="d-block w-100 " alt="...">
+									
+									<div class="carousel-caption custom-margin-top" >
+										<h1 style="color: #fff;" class="custom-h1" >FideleFinance<br>Shape Your Financial Future</h1>
+										<p class="header-p-tag">We trade stocks, cryptocurrencies, copy-trading indices, commodities, and forex—all <br>from one account—using advanced trading and investment strategies.</p>
+										<div class="d-flex flex-column flex-sm-row  gap-2 justify-content-center" style="align-items: center; display: flex; justify-content: center;">
+											<a href="{% url "userauths:sign-up" %}"><button type="button" class="btn btn-primary btn-lg uicore-btn vhg7f"  style="color: #fff !important;">Get Started</button></a>
+
+											{% if request.user.is_authenticated %}
+											<a href="{% url "core:dashboard" %}"><button type="button" class="btn btn-secondary btn-lg uicore-btn vhg7f" style="background: transparent; border: 2px solid #1235b4;">Dashboard</button></a>
+											{% else %}
+											<a href="{% url "userauths:sign-in" %}"><button type="button" class="btn btn-secondary btn-lg uicore-btn vhg7f" style="background: transparent; border: 2px solid #1235b4;">Log In</button></a>
+											{% endif %}
+										</div>
+									</div>
+									
+								  </div>
+								  <div class="carousel-item" data-bs-interval="4000">
+									<div>
+										<img src="{% static "assets/images/hyuguhhu.jpg" %}" style="height: 600px;" class="d-block w-100" alt="...">
+										<div class="carousel-caption custom-margin-top-2">
+											
+											<h1 style="color: #fff;"  class="custom-h1">FideleFinance<br> Your Partner in Wealth Creation</h1>
+											<p class="header-p-tag">FideleFinance is your go-to platform for maximizing growth and securing financial freedom<br> in Crypto, Stocks, Copy-Trading Indices, Commodities, and Forex Trading.</p>
+											<div class="d-flex flex-column flex-sm-row  gap-2 justify-content-center" style="align-items: center; display: flex; justify-content: center;">
+												<a href="{% url "userauths:sign-up" %}"><button type="button" class="btn btn-primary btn-lg uicore-btn vhg7f" style="color: #fff !important;">Get Started</button></a>
+												
+												{% if request.user.is_authenticated %}
+												<a href="{% url "core:dashboard" %}"><button type="button" class="btn btn-secondary btn-lg uicore-btn vhg7f" >Dashboard</button></a>
+												{% else %}
+												<a href="{% url "userauths:sign-in" %}"><button type="button" class="btn btn-secondary btn-lg uicore-btn vhg7f" style="background: transparent; border: 2px solid #1235b4;">Log In</button></a>
+												{% endif %}
+											</div>
+										</div>
+									</div>
+								  </div>
+								  <script>
+									$(document).ready(function() {
+										// Function to animate elements when they enter the viewport
+										function animateOnScroll(entries) {
+											entries.forEach(entry => {
+												if (entry.isIntersecting) {
+													$(entry.target).animate({
+														opacity: 1,
+													}, 800);
+								
+													$(entry.target).css({
+														'transform': 'translateY(0)'
+													});
+								
+													observer.unobserve(entry.target); // Stop observing once animation is applied
+												}
+											});
+										}
+								
+										// Create an Intersection Observer instance
+										const observer = new IntersectionObserver(animateOnScroll, { threshold: 0.5 });
+								
+										// Observe each element with the specified class
+										$(".custom-h1, .header-p-tag, .uicore-btn").each(function() {
+											observer.observe(this);
+										});
+									});
+								</script>
+								  	<div class="carousel-item" data-bs-interval="5000">
+										<img src="{% static "assets/images/mgntrgj1.jpg" %}" style="height: 600px;" class="d-block w-100" alt="...">
+										<div class="carousel-caption custom-margin-top-3">
+											<h1 style="color: #fff;"  class="custom-h1 ">FideleFinance<br>Empower Your Wealth</h1>
+											<p class="header-p-tag">Discover Expert Insights Across Diverse Markets with FideleFinance,<br> Offering Innovative Strategies to Achieve Financial Success.</p>
+											<div class="d-flex flex-column flex-sm-row  gap-2 justify-content-center" style="align-items: center; display: flex; justify-content: center;">
+												<a href="{% url "userauths:sign-up" %}"><button type="button" class="btn btn-primary btn-lg uicore-btn vhg7f"  style="color: #fff !important;">Get Started</button></a>
+												
+												{% if request.user.is_authenticated %}
+												<a href="{% url "core:dashboard" %}"><button type="button" class="btn btn-secondary btn-lg uicore-btn vhg7f" >Dashboard</button></a>
+												{% else %}
+												<a href="{% url "userauths:sign-in" %}"><button type="button" class="btn btn-secondary btn-lg uicore-btn vhg7f" style="background: transparent; border: 2px solid #1235b4;">Log In</button></a>
+												{% endif %}
+											</div>
+											
+										</div>
+								   </div>
+								   	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										<span class="visually-hidden">Previous</span>
+									</button>
+									<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										<span class="visually-hidden">Next</span>
+									</button>
+								</div>
+								
+							</div>
+							<div class="tradingview-widget-container" style="background: #f5faf6;">
+								<div class="tradingview-widget-container__widget" ></div>
+								<div class="tradingview-widget-copyright" ><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text" style="display: none !important;">Track all markets on TradingView</span></a></div>
+								<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+								{
+								"symbols": [
+								  {
+									"proName": "FOREXCOM:SPXUSD",
+									"title": "S&P 500"
+								  },
+								  {
+									"proName": "FOREXCOM:NSXUSD",
+									"title": "US 100"
+								  },
+								  {
+									"proName": "FX_IDC:EURUSD",
+									"title": "EUR to USD"
+								  },
+								  {
+									"proName": "BITSTAMP:BTCUSD",
+									"title": "Bitcoin"
+								  },
+								  {
+									"proName": "BITSTAMP:ETHUSD",
+									"title": "Ethereum"
+								  },
+								  {
+									"description": "Ethereum",
+									"proName": "BITSTAMP:ETHUSD"
+								  },
+								  {
+									"description": "Apple",
+									"proName": "NASDAQ:AAPL"
+								  },
+								  {
+									"description": "Gold",
+									"proName": "CAPITALCOM:GOLD"
+								  }
+								],
+								"showSymbolLogo": true,
+								"isTransparent": false,
+								"displayMode": "regular",
+								"colorTheme": "light",
+								"locale": "en"
+							  }
+								</script>
+								
+							</div>
+							<div data-elementor-type="wp-page" data-elementor-id="13" class="elementor elementor-13">
+								
+								<section
+									class="elementor-section elementor-top-section elementor-element elementor-element-3eb84fe elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+									data-id="3eb84fe" data-element_type="section"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-container elementor-column-gap-default">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bef317f"
+											data-id="bef317f" data-element_type="column">
+											<div class="elementor-widget-wrap elementor-element-populated">
+												<div class="elementor-element elementor-element-3f6bdc6 elementor-invisible elementor-widget elementor-widget-heading"
+													data-id="3f6bdc6" data-element_type="widget"
+													data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;220&quot;}"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h3 class="elementor-heading-title elementor-size-default">
+															Trusted by the world’s leading brands</h3>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-8ca33e3 bdt-lg-col-6 bdt-lg-col--tablet3 bdt-logo-grid--box bdt-lg-col--mobile2 elementor-invisible elementor-widget elementor-widget-bdt-logo-grid"
+													data-id="8ca33e3" data-element_type="widget"
+													data-settings="{&quot;_animation&quot;:&quot;zoomOut&quot;,&quot;_animation_delay&quot;:&quot;200&quot;}"
+													data-widget_type="bdt-logo-grid.default">
+													<div class="elementor-widget-container">
+														<div class="bdt-logo-grid-wrapper">
+															<div class="bdt-item"
+																data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Brand Name&lt;/span&gt;Brand Short Description Type Here.">
+																<figure class="bdt-logo-grid-figure">
+																	<img decoding="async" width="378" height="148"
+																		src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-1.webp' %}"
+																		class="bdt-logo-grid-img bdt-image-mask elementor-animation-"
+																		alt="Brand Name : Brand Short Description Type Here."
+																		srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-1.webp 378w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-1-300x117.webp 300w"
+																		sizes="(max-width: 378px) 100vw, 378px" />
+																</figure>
+															</div>
+															<div class="bdt-item"
+																data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Brand Name&lt;/span&gt;Brand Short Description Type Here.">
+																<figure class="bdt-logo-grid-figure">
+																	<img loading="lazy" decoding="async" width="378"
+																		height="148"
+																		src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-2.webp' %}"
+																		class="bdt-logo-grid-img bdt-image-mask elementor-animation-"
+																		alt="Brand Name : Brand Short Description Type Here."
+																		srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-2.webp 378w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-2-300x117.webp 300w"
+																		sizes="(max-width: 378px) 100vw, 378px" />
+																</figure>
+															</div>
+															<div class="bdt-item"
+																data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Brand Name&lt;/span&gt;Brand Short Description Type Here.">
+																<figure class="bdt-logo-grid-figure">
+																	<img loading="lazy" decoding="async" width="378"
+																		height="148"
+																		src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-3.webp' %}"
+																		class="bdt-logo-grid-img bdt-image-mask elementor-animation-"
+																		alt="Brand Name : Brand Short Description Type Here."
+																		srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-3.webp 378w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-3-300x117.webp 300w"
+																		sizes="(max-width: 378px) 100vw, 378px" />
+																</figure>
+															</div>
+															<div class="bdt-item"
+																data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Brand Name&lt;/span&gt;Brand Short Description Type Here.">
+																<figure class="bdt-logo-grid-figure">
+																	<img loading="lazy" decoding="async" width="378"
+																		height="148"
+																		src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-4.webp' %}"
+																		class="bdt-logo-grid-img bdt-image-mask elementor-animation-"
+																		alt="Brand Name : Brand Short Description Type Here."
+																		srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-4.webp 378w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-4-300x117.webp 300w"
+																		sizes="(max-width: 378px) 100vw, 378px" />
+																</figure>
+															</div>
+															<div class="bdt-item"
+																data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Brand Name&lt;/span&gt;Brand Short Description Type Here.">
+																<figure class="bdt-logo-grid-figure">
+																	<img loading="lazy" decoding="async" width="378"
+																		height="148"
+																		src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-5.webp' %}"
+																		class="bdt-logo-grid-img bdt-image-mask elementor-animation-"
+																		alt="Brand Name : Brand Short Description Type Here."
+																		srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-5.webp 378w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-5-300x117.webp 300w"
+																		sizes="(max-width: 378px) 100vw, 378px" />
+																</figure>
+															</div>
+															<div class="bdt-item"
+																data-tippy-content="&lt;span class=&quot;bdt-title&quot;&gt;Brand Name&lt;/span&gt;Brand Short Description Type Here.">
+																<figure class="bdt-logo-grid-figure">
+																	<img loading="lazy" decoding="async" width="378"
+																		height="148"
+																		src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-6.webp' %}"
+																		class="bdt-logo-grid-img bdt-image-mask elementor-animation-"
+																		alt="Brand Name : Brand Short Description Type Here."
+																		srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-6.webp 378w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Brand-6-300x117.webp 300w"
+																		sizes="(max-width: 378px) 100vw, 378px" />
+																</figure>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							
+								<div class="elementor-section elementor-top-section elementor-element elementor-element-8794384 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+									data-id="8794384" data-element_type="section"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d56f4f3"
+											data-id="d56f4f3" data-element_type="column">
+											<div class="elementor-widget-wrap elementor-element-populated">
+												
+												<section
+													class="elementor-section elementor-inner-section elementor-element elementor-element-5791a87 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+													data-id="5791a87" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-031fa38 elementor-invisible"
+															data-id="031fa38" data-element_type="column"
+															data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+														
+																<div class="elementor-element elementor-element-5b58f38 elementor-widget elementor-widget-image"
+																	data-id="5b58f38" data-element_type="widget"
+																	data-widget_type="image.default">
+																	<div class="elementor-widget-container">
+																		<img loading="lazy" decoding="async" width="812"
+																			height="816"
+																			src="{% static 'assets/images/img-07-dark.jpg' %}"
+																			class="attachment-full size-full wp-image-29"
+																			alt
+																			 />
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c558e2b"
+															data-id="c558e2b" data-element_type="column">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-element elementor-element-51de5ca  ui-split-animate ui-splitby-lines elementor-widget elementor-widget-heading"
+																	data-id="51de5ca" data-element_type="widget"
+																	data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;lines&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+																	data-widget_type="heading.default">
+																	<div class="elementor-widget-container">
+																		<h2
+																			class="elementor-heading-title elementor-size-default">
+																			One-Stop Platform</h2>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-2ca04f7 elementor-invisible elementor-widget elementor-widget-text-editor"
+																	data-id="2ca04f7" data-element_type="widget"
+																	data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:333}"
+																	data-widget_type="text-editor.default">
+																	<div class="elementor-widget-container">
+																		<p>Simplify your trading experience by accessing multiple markets all from one account. Whether you’re trading Forex, cryptocurrencies, stocks, indices, or commodities, FideleFinance ensures seamless integration and ease of use. </p>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-4bc16a6 elementor-mobile-align-center elementor-invisible elementor-widget elementor-widget-button"
+																	data-id="4bc16a6" data-element_type="widget"
+																	data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;200&quot;}"
+																	data-widget_type="button.default">
+																	<div class="elementor-widget-container">
+																		<div class="elementor-button-wrapper">
+																			<a class="elementor-button elementor-button-link elementor-size-sm"
+																				href="/user/sign-in">
+																				<span
+																					class="elementor-button-content-wrapper">
+																					<span
+																						class="elementor-button-text"  style="color: #fff !important;">Dashboard
+																						</span>
+																				</span>
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</section>
+												<section
+													class="elementor-section elementor-inner-section elementor-element elementor-element-cb334dc elementor-section-full_width elementor-reverse-mobile elementor-section-height-default elementor-section-height-default"
+													data-id="cb334dc" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fa08778 ui-col-align-left"
+															data-id="fa08778" data-element_type="column">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-element elementor-element-cf9b2a6  ui-split-animate ui-splitby-lines elementor-widget elementor-widget-heading"
+																	data-id="cf9b2a6" data-element_type="widget"
+																	data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;lines&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+																	data-widget_type="heading.default">
+																	<div class="elementor-widget-container">
+																		<h2
+																			class="elementor-heading-title elementor-size-default">
+																			Fast and Secure transactions</h2>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-fabba19 elementor-invisible elementor-widget elementor-widget-text-editor"
+																	data-id="fabba19" data-element_type="widget"
+																	data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+																	data-widget_type="text-editor.default">
+																	<div class="elementor-widget-container">
+																		Your security is our top priority. FideleFinance employs robust encryption protocols, multi-factor authentication, and advanced fraud detection systems to protect your funds and personal data. Trade with peace of mind, knowing that your transactions and sensitive information are safeguarded at every step.</div>
+																</div>
+																<div class="elementor-element elementor-element-8a3e157 elementor-mobile-align-center elementor-widget elementor-widget-button"
+																	data-id="8a3e157" data-element_type="widget"
+																	data-widget_type="button.default">
+																	<div class="elementor-widget-container">
+																		<div class="elementor-button-wrapper">
+																			<a class="elementor-button elementor-button-link elementor-size-sm"
+																				href="/user/sign-up">
+																				<span
+																					class="elementor-button-content-wrapper">
+																					<span
+																						class="elementor-button-text"  style="color: #fff !important;">Get Started</span>
+																				</span>
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-dbb9d8c elementor-invisible"
+															data-id="dbb9d8c" data-element_type="column"
+															data-settings="{&quot;animation&quot;:&quot;fadeInRight&quot;}">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-element elementor-element-c7f7c65 elementor-widget elementor-widget-image"
+																	data-id="c7f7c65" data-element_type="widget"
+																	data-widget_type="image.default">
+																	<div class="elementor-widget-container">
+																		<img loading="lazy" decoding="async"
+																			width="1064" height="743"
+																			src="{% static 'assets/images/forex.jpg' %}"
+																			class="attachment-full size-full wp-image-31"
+																			alt
+																			 />
+																	</div>
+																</div>
+															
+															
+															</div>
+														</div>
+													</div>
+												</section>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="elementor-section elementor-top-section elementor-element elementor-element-857139f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+									data-id="857139f" data-element_type="section"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1422020"
+											data-id="1422020" data-element_type="column">
+											<div class="elementor-widget-wrap elementor-element-populated">
+												<div class="elementor-element elementor-element-b33725f elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit  ui-split-animate ui-splitby-lines elementor-widget elementor-widget-heading"
+													data-id="b33725f" data-element_type="widget"
+													data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;lines&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h2 class="elementor-heading-title elementor-size-default">How it works?</h2>
+													</div>
+												</div>
+												<section
+													class="elementor-section elementor-inner-section elementor-element elementor-element-95bbaa2 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+													data-id="95bbaa2" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-7903e6a elementor-invisible"
+															data-id="7903e6a" data-element_type="column"
+															data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomOutLeft&quot;,&quot;animation_delay&quot;:190}">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-element elementor-element-abff3ff elementor-widget elementor-widget-heading"
+																	data-id="abff3ff" data-element_type="widget"
+																	data-widget_type="heading.default">
+																	<div class="elementor-widget-container">
+																		<h3
+																			class="elementor-heading-title elementor-size-default">
+																			Create an Account</h3>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-2431bf0 elementor-widget elementor-widget-text-editor"
+																	data-id="2431bf0" data-element_type="widget"
+																	data-widget_type="text-editor.default">
+																	<div class="elementor-widget-container">
+																		Sign up for free (it's really quick and easy) and gain instant access to all our features. </div>
+																</div>
+																<div style="">
+																<img loading="lazy" decoding="async" style="border-radius: 1.75rem; width: 100%; height: 300px; "
+																			
+																			src="{% static 'assets/images/uhrg8rhg.jpeg' %}"
+																			
+																			alt
+																			 />
+																</div>
+															</div>
+														</div>
+														<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-456bf57 elementor-invisible"
+															data-id="456bf57" data-element_type="column"
+															data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomOut&quot;,&quot;animation_delay&quot;:300}">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-element elementor-element-08456a4 elementor-widget elementor-widget-heading"
+																	data-id="08456a4" data-element_type="widget"
+																	data-widget_type="heading.default">
+																	<div class="elementor-widget-container">
+																		<h3
+																			class="elementor-heading-title elementor-size-default">
+																			Deposit Funds</h3>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-c9f7e70 elementor-widget elementor-widget-text-editor"
+																	data-id="c9f7e70" data-element_type="widget"
+																	data-widget_type="text-editor.default">
+																	<div class="elementor-widget-container">
+																		Securely deposit funds into your account using our supported payment methods. </div>
+																</div>
+																<img loading="lazy" decoding="async" style="border-radius: 1.75rem; width: 100%; height: 300px;"
+																height="136"
+																src="{% static 'assets/images/rjbguenfj.jpeg' %}"
+																
+																alt
+																 />
+																
+															</div>
+														</div>
+														<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-8c6854d elementor-invisible"
+															data-id="8c6854d" data-element_type="column"
+															data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomOutRight&quot;,&quot;animation_delay&quot;:190}">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-element elementor-element-e8f8d44 elementor-widget elementor-widget-heading"
+																	data-id="e8f8d44" data-element_type="widget"
+																	data-widget_type="heading.default">
+																	<div class="elementor-widget-container">
+																		<h3
+																			class="elementor-heading-title elementor-size-default">
+																			Start Trading And Investing</h3>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-4c449a5 elementor-widget elementor-widget-text-editor"
+																	data-id="4c449a5" data-element_type="widget"
+																	data-widget_type="text-editor.default">
+																	<div class="elementor-widget-container">
+																		<p>Choose your preferred market and begin trading or investing with expert guidance.</p>
+																	</div>
+																</div>
+																<img loading="lazy" decoding="async" style="border-radius: 1.75rem; width: 100%; height: 300px;"
+													
+																src="{% static 'assets/images/download.jpeg' %}"
+															
+																alt
+																 />
+															
+															</div>
+														</div>
+													</div>
+												</section>
+											</div>
+										</div>
+									</div>
+								</div>
+								<section
+									class="elementor-section elementor-top-section elementor-element elementor-element-bc1c9b0 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+									data-id="bc1c9b0" data-element_type="section"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-container elementor-column-gap-default">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3633389"
+											data-id="3633389" data-element_type="column">
+											<div class="elementor-widget-wrap elementor-element-populated">
+												<div class="elementor-element elementor-element-972c253 elementor-widget elementor-widget-heading"
+													data-id="972c253" data-element_type="widget"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h2 class="elementor-heading-title elementor-size-default">Find
+															a plan that's right for you.</h2>
+													</div>
+												</div>
+												
+												
+											</div>
+										</div>
+									</div>
+								</section>
+								
+								<div class="elementor-section elementor-top-section elementor-element elementor-element-6cd0f42 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+									data-id="6cd0f42" data-element_type="section"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-container elementor-column-gap-default">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1ff5e3b"
+											data-id="1ff5e3b" data-element_type="column">
+											<div class="elementor-widget-wrap elementor-element-populated">
+												<section
+													class="elementor-section elementor-inner-section elementor-element elementor-element-8f5c40e animated-fast elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+													data-id="8f5c40e" data-element_type="section" id="Montly"
+													data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;}">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-97a9f83 elementor-invisible"
+															data-id="97a9f83" data-element_type="column"
+															data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomOut&quot;,&quot;animation_delay&quot;:200}">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-background-overlay"></div>
+																<div class="elementor-element elementor-element-34b1905 elementor-widget elementor-widget-heading"
+																	data-id="34b1905" data-element_type="widget"
+																	data-widget_type="heading.default">
+																	<div class="elementor-widget-container">
+																		<h3
+																			class="elementor-heading-title elementor-size-default">
+																			Find a plan that's right for you.</h3>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-e3c07a8 elementor-widget elementor-widget-image"
+																	data-id="e3c07a8" data-element_type="widget"
+																	data-widget_type="image.default">
+																	<div class="elementor-widget-container">
+																		<img loading="lazy" decoding="async" width="379"
+																			height="294"
+																			src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-1.webp' %}"
+																			class="attachment-full size-full wp-image-42"
+																			alt
+																			srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-1.webp 379w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-1-300x233.webp 300w"
+																			sizes="(max-width: 379px) 100vw, 379px" />
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-2d2c7ff elementor-widget elementor-widget-image"
+																	data-id="2d2c7ff" data-element_type="widget"
+																	data-widget_type="image.default">
+																	<div class="elementor-widget-container">
+																		<img loading="lazy" decoding="async" width="380"
+																			height="182"
+																			src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-2.webp' %}"
+																			class="attachment-full size-full wp-image-43"
+																			alt
+																			srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-2.webp 380w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-2-300x144.webp 300w"
+																			sizes="(max-width: 380px) 100vw, 380px" />
+																	</div>
+																</div>
+															</div>
+														</div>
+														{% for p in plans %}
+														<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element" style="margin-bottom: 10px;"
+															data-id="a032daf" data-element_type="column">
+															<div class="elementor-widget-wrap elementor-element-populated" style="background: #AEAEAE1A; border-radius: 20px; padding: 20px; border-color: #8F8F8F2E; border-style: solid; border-width: 1px;">
+																<div class="elementor-widget-container">
+																	<div class="bdt-ep-advanced-icon-box">
+																		<div class="bdt-ep-advanced-icon-box-content">
+																			<!-- Icon -->
+																			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																				<path d="M2 10L6 4H18L22 10M2 10L12 20M2 10H22M12 20L22 10M12 20L16 10L12 4L8 10L12 20Z" 
+																					stroke="rgba(0,0,0,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+																			</svg>
+
+																			<!-- Plan Title -->
+																			<h4 class="bdt-ep-advanced-icon-box-title" style="margin-top: 10px;">
+																				{{ p.title }}
+																			</h4>
+
+																			<!-- Plan Pricing -->
+																			<div class="bdt-ep-advanced-icon-box-sub-title" style="font-weight: 600; font-size: 25px; padding-top: 25px;">
+																				${{ p.least_amount|intcomma }} - ${{ p.max_amount|intcomma }}
+																			</div>
+
+																			<!-- Plan Description -->
+																			<div class="bdt-ep-advanced-icon-box-description" style="margin-bottom: 10px;">
+																				<p>Crypto/Stocks/Forex</p>
+																			</div>
+																		</div>
+																	</div>
+
+																	<!-- Features List -->
+																	<div class="elementor-icon-list">
+																		<ul class="elementor-icon-list-items" style="align-items: center; justify-content: center; display: grid;">
+																			<li class="elementor-icon-list-item">
+																				<span class="elementor-icon-list-icon">
+																					<i class="fas fa-check"></i>
+																				</span>
+																				<span class="elementor-icon-list-text">
+																					{{ p.percentage_return }}% ROI daily for {{ p.description }}
+																				</span>
+																			</li>
+																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
+																				<span class="elementor-icon-list-icon">
+																					<i class="fas fa-check"></i>
+																				</span>
+																				<span class="elementor-icon-list-text">10% Referral Bonus</span>
+																			</li>
+																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
+																				<span class="elementor-icon-list-icon">
+																					<i class="fas fa-check"></i>
+																				</span>
+																				<span class="elementor-icon-list-text">1 Month Contract</span>
+																			</li>
+																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
+																				<span class="elementor-icon-list-icon">
+																					<i class="fas fa-check"></i>
+																				</span>
+																				<span class="elementor-icon-list-text">Automatic Payout</span>
+																			</li>
+																		</ul>
+																	</div>
+
+																	<!-- Call-to-Action Button -->
+																	<a href="{% url 'core:plan-detail' p.pid %}" 
+																	class="btn btn-lg rounded-2" 
+																	style="background: #0050b2; color: #fff; width: 100%; cursor: pointer; margin-bottom: 10px;">
+																		Activate Plan
+																	</a>
+																</div>
+															</div>
+														</div>
+														{% endfor %}
+
+													
+													</div>
+												</section>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="elementor-section elementor-top-section elementor-element elementor-element-1451375 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+									data-id="1451375" data-element_type="section"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-container elementor-column-gap-default">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-132baf0"
+											data-id="132baf0" data-element_type="column">
+											<div class="elementor-widget-wrap elementor-element-populated">
+												<div class="elementor-element elementor-element-4a8dd12 elementor-widget elementor-widget-text-editor"
+													data-id="4a8dd12" data-element_type="widget"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<p>Need a custom pricing? <a
+																href="mailto:support@FideleFinance.com">Request a quote</a>.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="container text-center" style="margin-top: 40px;">
+									<h2 class="mb-5">Real Time Transactions</h2>
+									<div class="row justify-content-center">
+										<div class="col-md-4">
+											<h4 class="mb-3">Live Deposits</h4>
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Number</th>
+														<th>Country</th> <!-- Empty column for spacing -->
+													</tr>
+												</thead>
+												<tbody id="ledger-body">
+													<!-- Table rows will be added here -->
+												</tbody>
+											</table>
+								
+										</div>
+										<div class="col-md-1"></div> <!-- Add spacing between columns -->
+										<div class="col-md-4">
+											<h4 class="mb-3">Live Withdrawals</h4>
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Number</th>
+														<th>Country</th> <!-- Empty column for spacing -->
+													</tr>
+												</thead>
+												<tbody id="ledger-body-2">
+													<!-- Table rows will be added here -->
+												</tbody>
+											</table>
+								
+										</div>
+									</div>
+								</div>
+								<script>
+									// Assuming namesJson is the JSON string served by your Python backend
+									var names = JSON.parse('{{namesJson|escapejs}}');
+									function getRandomNumber(min, max) {
+										return Math.floor(Math.random() * (max - min + 1)) + min;
+									}
+									// Function to get a random name from the names array
+									function getRandomName() {
+										return names[Math.floor(Math.random() * names.length)];
+									}
+								
+									function getRandomCountryCode() {
+										// This is a list of some country codes, you can expand it as needed
+										var countryCodes = [
+										"ad", "ae", "af", "ag", "ai", "al", "am", "ao", "aq", "ar", "as", "at", "au", "aw", "ax", "az",
+										"ba", "bb", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bl", "bm", "bn", "bo", "bq", "br", "bs", "bt", "bv", "bw", "by", "bz",
+										"ca", "cc", "cd", "cf", "cg", "ch", "ci", "ck", "cl", "cm", "cn", "co", "cr", "cu", "cv", "cw", "cx", "cy", "cz",
+										"de", "dj", "dk", "dm", "do", "dz",
+										"ec", "ee", "eg", "eh", "er", "es", "et",
+										"fi", "fj", "fk", "fm", "fo", "fr",
+										"ga", "gb", "gd", "ge", "gf", "gg", "gh", "gi", "gl", "gm", "gn", "gp", "gq", "gr", "gs", "gt", "gu", "gw", "gy",
+										"hk", "hm", "hn", "hr", "ht", "hu",
+										"id", "ie", "il", "im", "in", "io", "iq", "ir", "is", "it",
+										"je", "jm", "jo", "jp",
+										"ke", "kg", "kh", "ki", "km", "kn", "kp", "kr", "kw", "ky", "kz",
+										"la", "lb", "lc", "li", "lk", "lr", "ls", "lt", "lu", "lv", "ly",
+										"ma", "mc", "md", "me", "mf", "mg", "mh", "mk", "ml", "mm", "mn", "mo", "mp", "mq", "mr", "ms", "mt", "mu", "mv", "mw", "mx", "my", "mz",
+										"na", "nc", "ne", "nf", "ng", "ni", "nl", "no", "np", "nr", "nu", "nz",
+										"om",
+										"pa", "pe", "pf", "pg", "ph", "pk", "pl", "pm", "pn", "pr", "ps", "pt", "pw", "py",
+										"qa",
+										"re", "ro", "rs", "ru", "rw",
+										"sa", "sb", "sc", "sd", "se", "sg", "sh", "si", "sj", "sk", "sl", "sm", "sn", "so", "sr", "ss", "st", "sv", "sx", "sy", "sz",
+										"tc", "td", "tf", "tg", "th", "tj", "tk", "tl", "tm", "tn", "to", "tr", "tt", "tv", "tw", "tz",
+										"ua", "ug", "um", "us", "uy", "uz",
+										"va", "vc", "ve", "vg", "vi", "vn", "vu",
+										"wf", "ws",
+										"ye", "yt",
+										"za", "zm", "zw"
+									  ];
+									  
+									  
+										return countryCodes[Math.floor(Math.random() * countryCodes.length)];
+									}
+								
+									// Function to update ledger items for ledger-body
+									function updateLedgerItems1() {
+										var ledgerBody1 = document.getElementById('ledger-body');
+								
+										// Clear existing table rows
+										ledgerBody1.innerHTML = '';
+								
+										// Generate and append new table rows
+										for (var i = 0; i < 10; i++) {
+											var randomName = getRandomName();
+											var randomNumber = getRandomNumber(100, 50000);
+											var randomCountryCode = getRandomCountryCode();
+								
+											var row = document.createElement('tr');
+								
+											var nameCell = document.createElement('td');
+											nameCell.textContent = randomName;
+											row.appendChild(nameCell);
+								
+											var numberCell = document.createElement('td');
+											numberCell.textContent = '$'+  randomNumber.toLocaleString();
+											row.appendChild(numberCell);
+								
+											var flagCell = document.createElement('td');
+											var flagImg = document.createElement('img');
+											flagImg.src = `https://flagcdn.com/16x12/${randomCountryCode}.png`;
+											flagCell.appendChild(flagImg);
+											row.appendChild(flagCell);
+								
+											ledgerBody1.appendChild(row);
+										}
+									}
+								
+									// Function to update ledger items for ledger-body-2
+									function updateLedgerItems2() {
+										var ledgerBody2 = document.getElementById('ledger-body-2');
+								
+										// Clear existing table rows
+										ledgerBody2.innerHTML = '';
+								
+										// Generate and append new table rows
+										for (var i = 0; i < 10; i++) {
+											var randomName = getRandomName();
+											var randomNumber = getRandomNumber(100, 50000);
+											var randomCountryCode = getRandomCountryCode();
+								
+											var row = document.createElement('tr');
+								
+											var nameCell = document.createElement('td');
+											nameCell.textContent = randomName;
+											row.appendChild(nameCell);
+								
+											var numberCell = document.createElement('td');
+											numberCell.textContent = '$'+ randomNumber.toLocaleString();
+											row.appendChild(numberCell);
+								
+											var flagCell = document.createElement('td');
+											var flagImg = document.createElement('img');
+											flagImg.src = `https://flagcdn.com/16x12/${randomCountryCode}.png`;
+											flagCell.appendChild(flagImg);
+											row.appendChild(flagCell);
+								
+											ledgerBody2.appendChild(row);
+										}
+									}
+								
+									// Update ledger items every 3 seconds
+									setInterval(updateLedgerItems1, 2500);
+									setInterval(updateLedgerItems2, 3000);
+								
+									// Initial update
+									updateLedgerItems1();
+									updateLedgerItems2();
+								</script>
+								<section
+													class="elementor-section elementor-inner-section elementor-element elementor-element-cb334dc elementor-section-full_width elementor-reverse-mobile elementor-section-height-default elementor-section-height-default"
+													data-id="cb334dc" data-element_type="section">
+													<div class="elementor-container elementor-column-gap-default">
+														<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fa08778 ui-col-align-left"
+															data-id="fa08778" data-element_type="column">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-element elementor-element-cf9b2a6  ui-split-animate ui-splitby-lines elementor-widget elementor-widget-heading"
+																	data-id="cf9b2a6" data-element_type="widget"
+																	data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;lines&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+																	data-widget_type="heading.default">
+																	<div class="elementor-widget-container">
+																		<h2
+																			class="elementor-heading-title elementor-size-default">
+																			Education & Resources</h2>
+																	</div>
+																</div>
+																<div class="elementor-element elementor-element-fabba19 elementor-invisible elementor-widget elementor-widget-text-editor"
+																	data-id="fabba19" data-element_type="widget"
+																	data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+																	data-widget_type="text-editor.default">
+																	<div class="elementor-widget-container">
+																		Expand your knowledge with access to tutorials, blogs, live webinars, and market analysis to make informed decisions.</div>
+																</div>
+																<div class="elementor-element elementor-element-8a3e157 elementor-mobile-align-center elementor-widget elementor-widget-button"
+																	data-id="8a3e157" data-element_type="widget"
+																	data-widget_type="button.default">
+																	<div class="elementor-widget-container">
+																		<div class="elementor-button-wrapper">
+																			<a class="elementor-button elementor-button-link elementor-size-sm"
+																				href="/user/sign-up">
+																				<span
+																					class="elementor-button-content-wrapper">
+																					<span
+																						class="elementor-button-text"  style="color: #fff !important;">Get Started</span>
+																				</span>
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-dbb9d8c elementor-invisible"
+															data-id="dbb9d8c" data-element_type="column"
+															data-settings="{&quot;animation&quot;:&quot;fadeInRight&quot;}">
+															<div
+																class="elementor-widget-wrap elementor-element-populated">
+																<div class="elementor-element elementor-element-c7f7c65 elementor-widget elementor-widget-image"
+																	data-id="c7f7c65" data-element_type="widget"
+																	data-widget_type="image.default">
+																	<div class="elementor-widget-container">
+																		<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+	<div class="tradingview-widget-container__widget"></div>
+	<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+	<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+	{
+	"feedMode": "all_symbols",
+	"isTransparent": false,
+	"displayMode": "regular",
+	"width": "100%",
+	"height": "550",
+	"colorTheme": "light",
+	"locale": "en"
+  }
+	</script>
+  </div>
+  <!-- TradingView Widget END -->
+																	</div>
+																</div>
+															
+															
+															</div>
+														</div>
+													</div>
+												</section>
+								<section
+									class="elementor-section elementor-top-section elementor-element elementor-element-d8f4dae elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+									data-id="d8f4dae" data-element_type="section"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-background-overlay"></div>
+									<div class="elementor-container elementor-column-gap-default">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-87b377b"
+											data-id="87b377b" data-element_type="column">
+											<div class="elementor-widget-wrap elementor-element-populated">
+												<div class="elementor-element elementor-element-02ed608 elementor-invisible elementor-widget elementor-widget-heading"
+													data-id="02ed608" data-element_type="widget"
+													data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:200}"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h2 class="elementor-heading-title elementor-size-default">Hear
+															What Our Clients Have to Say</h2>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-43c9d3e bdt-navigation-type-dots bdt-item-match-height--yes bdt-review-img--top bdt-carousel-style-carousel elementor-invisible elementor-widget elementor-widget-bdt-review-card-carousel"
+													data-id="43c9d3e" data-element_type="widget"
+													data-settings="{&quot;_animation&quot;:&quot;zoomOutUp&quot;}"
+													data-widget_type="bdt-review-card-carousel.default">
+													<div class="elementor-widget-container">
+														<div id="bdt-review-card-carousel-43c9d3e"
+															class="bdt-dots-align-bottom-left bdt-review-card-carousel"
+															data-settings="{&quot;autoplay&quot;:{&quot;delay&quot;:5000},&quot;loop&quot;:true,&quot;speed&quot;:500,&quot;slidesPerView&quot;:1,&quot;slidesPerGroup&quot;:1,&quot;spaceBetween&quot;:24,&quot;effect&quot;:&quot;carousel&quot;,&quot;breakpoints&quot;:{&quot;767&quot;:{&quot;slidesPerView&quot;:2,&quot;spaceBetween&quot;:24,&quot;slidesPerGroup&quot;:1},&quot;1023&quot;:{&quot;slidesPerView&quot;:2,&quot;spaceBetween&quot;:24,&quot;slidesPerGroup&quot;:1}},&quot;navigation&quot;:{&quot;nextEl&quot;:&quot;#bdt-review-card-carousel-43c9d3e .bdt-navigation-next&quot;,&quot;prevEl&quot;:&quot;#bdt-review-card-carousel-43c9d3e .bdt-navigation-prev&quot;},&quot;pagination&quot;:{&quot;el&quot;:&quot;#bdt-review-card-carousel-43c9d3e .swiper-pagination&quot;,&quot;type&quot;:&quot;bullets&quot;,&quot;clickable&quot;:&quot;true&quot;,&quot;dynamicBullets&quot;:false},&quot;scrollbar&quot;:{&quot;el&quot;:&quot;#bdt-review-card-carousel-43c9d3e .swiper-scrollbar&quot;,&quot;hide&quot;:&quot;true&quot;},&quot;coverflowEffect&quot;:{&quot;rotate&quot;:50,&quot;stretch&quot;:0,&quot;depth&quot;:100,&quot;modifier&quot;:1,&quot;slideShadows&quot;:true}}">
+															<div class="swiper-carousel swiper">
+																<div class="swiper-wrapper">
+																	<div
+																	class="bdt-ep-review-card-carousel-item swiper-slide">
+																	<div
+																		class="bdt-ep-review-card-carousel-image bdt-image-mask">
+																		<img loading="lazy" decoding="async"
+																			width="120" height="120"
+																			src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Testimonial-Image-2.webp' %}"
+																			class="attachment-full size-full"
+																			alt="Emily Carter" />
+																	</div>
+																	<div
+																		class="bdt-ep-review-card-carousel-content">
+																		<h3
+																			class="bdt-ep-review-card-carousel-name">
+																			Emily Carter </h3>
+																		<div
+																			class="bdt-ep-review-card-carousel-job-title">
+																			Business Owner </div>
+																		<div
+																			class="bdt-ep-review-card-carousel-text">
+																			FideleFinance has transformed how I manage my business finances. Their platform is intuitive and makes accounting effortless. </div>
+																	</div>
+																</div>
+																<div
+																	class="bdt-ep-review-card-carousel-item swiper-slide">
+																	<div
+																		class="bdt-ep-review-card-carousel-image bdt-image-mask">
+																		<img loading="lazy" decoding="async"
+																			width="120" height="120"
+																			src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Testimonial-Image-1.webp' %}"
+																			class="attachment-full size-full"
+																			alt="James Wilson" />
+																	</div>
+																	<div
+																		class="bdt-ep-review-card-carousel-content">
+																		<h3
+																			class="bdt-ep-review-card-carousel-name">
+																			James Wilson </h3>
+																		<div
+																			class="bdt-ep-review-card-carousel-job-title">
+																			Freelance Consultant </div>
+																		<div
+																			class="bdt-ep-review-card-carousel-text">
+																			I've been using FideleFinance for over three years. It's reliable, user-friendly, and their support team is outstanding. </div>
+																	</div>
+																</div>
+																<div
+																	class="bdt-ep-review-card-carousel-item swiper-slide">
+																	<div
+																		class="bdt-ep-review-card-carousel-image bdt-image-mask">
+																		<img loading="lazy" decoding="async"
+																			width="120" height="120"
+																			src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Testimonial-Image-2.webp' %}"
+																			class="attachment-full size-full"
+																			alt="Sophia Martinez" />
+																	</div>
+																	<div
+																		class="bdt-ep-review-card-carousel-content">
+																		<h3
+																			class="bdt-ep-review-card-carousel-name">
+																			Sophia Martinez </h3>
+																		<div
+																			class="bdt-ep-review-card-carousel-job-title">
+																			Entrepreneur </div>
+																		<div
+																			class="bdt-ep-review-card-carousel-text">
+																			Thanks to FideleFinance, I have better control over my cash flow and can focus on growing my business. Highly recommended! </div>
+																	</div>
+																</div>
+																<div
+																	class="bdt-ep-review-card-carousel-item swiper-slide">
+																	<div
+																		class="bdt-ep-review-card-carousel-image bdt-image-mask">
+																		<img loading="lazy" decoding="async"
+																			width="120" height="120"
+																			src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Testimonial-Image-1.webp' %}"
+																			class="attachment-full size-full"
+																			alt="Michael Adams" />
+																	</div>
+																	<div
+																		class="bdt-ep-review-card-carousel-content">
+																		<h3
+																			class="bdt-ep-review-card-carousel-name">
+																			Michael Adams </h3>
+																		<div
+																			class="bdt-ep-review-card-carousel-job-title">
+																			Start-up Founder </div>
+																		<div
+																			class="bdt-ep-review-card-carousel-text">
+																			The tools provided by FideleFinance have been a game-changer for my startup. Their reporting and analytics are top-notch. </div>
+																	</div>
+																</div>
+																
+																</div>
+															</div>
+															<div class="bdt-position-z-index bdt-position-bottom-left">
+																<div class="bdt-dots-container">
+																	<div class="swiper-pagination"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</main>
+					</article>
+				</div>
+			</div>
+{% endblock content %}

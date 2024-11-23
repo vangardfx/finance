@@ -1,0 +1,191 @@
+{% extends "partials/auth.html" %}
+{% load static %}
+{% block title %}FideleFinance - Investment Confirmation Pending{% endblock title %}
+{% block content %}
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast=""
+  data-pc-theme="light">
+  <!-- [ Pre-loader ] start -->
+  <div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+
+  <!-- [ Main Content ] start -->
+  <div class="maintenance-block">
+    <div class="container">
+      <div class="row">
+        <!-- [ sample-page ] start -->
+        <div class="col-sm-12">
+          <div class="card construction-card">
+            <div class="card-body" style="border: 1px solid #ccc;">
+              <div class="construction-image-block">
+                <div class="row justify-content-center">
+                  <div class="col-10">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/guqkthkk.json"
+                    trigger="hover"
+                    colors="primary:#3080e8;"
+                    style="width:200px;height:150px;">
+                </lord-icon>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h1 class="mt-4"><b>Investment Pending</b></h1>
+                <p class="mt-4 text-muted">Investment Pending of ${{amount}} is being processed <br> </p>
+                <div class="p-2">
+                  <form>
+                      <div class="mb-4">
+                          <div style="margin-bottom: 15px;">
+                              <h5 style="font-size: 14px; font-weight: 700; margin-bottom: 15px">Transaction Details</h5>
+                              <label class="form-label alert-warning" style="margin-right: 145px; font-size: 12px;">Amount</label>
+                              <span  id="textToCo">${{amount}}</span><br>
+                              <label class="form-label alert-warning" style="margin-right: 80px;">Transaction Type</label>
+                              <span  id="textToCo">{{plan.title}}</span><br>
+                              <label class="form-label alert-warning" style="margin-right: 80px;">Payment Method</label>
+                              <span  id="textToCo">Balance</span><br>
+                              <label class="form-label alert-warning" style="margin-right: 98px;">Transaction Id</label>
+                              <span  id="textToCo">{{tid|truncatechars:9}}</span><br>
+                              <label class="form-label alert-warning" style="margin-right: 75px;">Transaction Date</label>
+                              <span  id="textToCo">{{date|date:"d M, Y"}}</span>
+                          </div>
+                          {% comment %} <div style="margin-bottom: 15px;">
+                          <label class="form-label">Pay with BNB</label>
+                          <span id="tetxToco"></span>
+                          <span id="coButton"><img src="{% static  'asset/images/small/copy.png' %}" height="20" width="20" aria-label="copy address"></span>
+                          </div> {% endcomment %}
+                      </div>
+            
+                      
+                  </form>
+                </div>
+                <button type="button" onclick="window.location.href='/app/dashboard';" class="btn btn-primary mb-3">Back To Home</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [ sample-page ] end -->
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+  <!-- [ Main Content ] end -->
+  <!-- Required Js -->
+  <script src="assets/js/plugins/popper.min.js"></script>
+  <script src="assets/js/plugins/simplebar.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.min.js"></script>
+  <script src="assets/js/fonts/custom-font.js"></script>
+  <script src="assets/js/pcoded.js"></script>
+  <script src="assets/js/plugins/feather.min.js"></script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+
+
+
+
+  <script>layout_change('light');</script>
+
+
+
+
+  <script>layout_theme_contrast_change('false');</script>
+
+
+
+
+
+
+  <div class="pct-c-btn">
+    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pc_layout">
+      <i class="ph-duotone ph-gear-six"></i>
+    </a>
+  </div>
+  <div class="offcanvas border-0 pct-offcanvas offcanvas-end" tabindex="-1" id="offcanvas_pc_layout">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Settings</h5>
+      <button type="button" class="btn btn-icon btn-link-danger" data-bs-dismiss="offcanvas" aria-label="Close"><i
+          class="ti ti-x"></i></button>
+    </div>
+    <div class="pct-body customizer-body">
+      <div class="offcanvas-body py-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="pc-dark">
+              <h6 class="mb-1">Theme Mode</h6>
+              <p class="text-muted text-sm">Choose light or dark mode or Auto</p>
+              <div class="row theme-color theme-layout">
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn active" data-value="true" onclick="layout_change('light');"
+                      data-bs-toggle="tooltip" title="Light">
+                      <svg class="pc-icon text-warning">
+                        <use xlink:href="#custom-sun-1"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn" data-value="false" onclick="layout_change('dark');"
+                      data-bs-toggle="tooltip" title="Dark">
+                      <svg class="pc-icon">
+                        <use xlink:href="#custom-moon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-grid">
+                    <button class="preset-btn btn" data-value="default" onclick="layout_change_default();"
+                      data-bs-toggle="tooltip"
+                      title="Automatically sets the theme based on user's operating system's color scheme.">
+                      <span class="pc-lay-icon d-flex align-items-center justify-content-center">
+                        <i class="ph-duotone ph-cpu"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <h6 class="mb-1">Theme Contrast</h6>
+            <p class="text-muted text-sm">Choose theme contrast</p>
+            <div class="row theme-contrast">
+              <div class="col-6">
+                <div class="d-grid">
+                  <button class="preset-btn btn" data-value="true" onclick="layout_theme_contrast_change('true');"
+                    data-bs-toggle="tooltip" title="True">
+                    <svg class="pc-icon">
+                      <use xlink:href="#custom-mask"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-grid">
+                  <button class="preset-btn btn active" data-value="false"
+                    onclick="layout_theme_contrast_change('false');" data-bs-toggle="tooltip" title="False">
+                    <svg class="pc-icon">
+                      <use xlink:href="#custom-mask-1-outline"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        
+          <li class="list-group-item">
+            <div class="d-grid">
+              <button class="btn btn-light-danger" id="layoutreset">Reset Layout</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock content %}

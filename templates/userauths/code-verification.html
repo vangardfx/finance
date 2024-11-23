@@ -1,0 +1,94 @@
+{% extends "partials/auth.html" %}
+{% load static %}
+{% block content %}
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast="" data-pc-theme="light">
+  <!-- [ Pre-loader ] start -->
+  <div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+
+  <div class="auth-main">
+    <div class="auth-wrapper v2">
+      <div class="auth-sidecontent">
+        <img src="{% static 'assets/images/cryptochart.jpg' %}" alt="images"
+          class="img-fluid img-auth-side">
+      </div>
+      <div class="auth-form">
+        <div class="card my-5">
+          <div class="card-body">
+            <div class="mb-4">
+              <a href="#"><imgsrc="{% static 'assets/logo/bluelogo.png' %}" style="height: 32px; width: 210px;" class="mb-4 img-fluid" alt="img"></a>
+              <h3 class="mb-2"><b>Enter Verification Code</b></h3>
+              <p class="text-muted mb-4">We send you on mail.</p>
+              <p class="">We`ve send you code on jone. ****@company.com</p>
+            </div>
+            <div class="row my-4 text-center">
+              <div class="col">
+                <input type="number" class="form-control text-center" placeholder="0">
+              </div>
+              <div class="col">
+                <input type="number" class="form-control text-center" placeholder="0">
+              </div>
+              <div class="col">
+                <input type="number" class="form-control text-center" placeholder="0">
+              </div>
+              <div class="col">
+                <input type="number" class="form-control text-center" placeholder="0">
+              </div>
+            </div>
+            <div class="d-grid mt-4">
+              <button type="button" class="btn btn-primary">Continue</button>
+            </div>
+            <div class="d-flex justify-content-start align-items-end mt-3">
+              <p class="mb-0">Did not receive the email?</p>
+              <a href="#" class="link-primary ms-2">Resend code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+  <!-- Required Js -->
+  <script src="{% static 'assets/js/plugins/popper.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/simplebar.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/fonts/custom-font.js' %}"></script>
+  <script src="{% static 'assets/js/pcoded.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/feather.min.js' %}"></script>
+
+  
+  
+  
+  
+  <script>layout_change('light');</script>
+  
+  
+  
+  
+  <script>layout_theme_contrast_change('false');</script>
+  
+  
+  
+  <script>change_box_container('false');</script>
+  
+  
+  <script>layout_caption_change('true');</script>
+  
+  
+  
+  
+  <script>layout_rtl_change('false');</script>
+  
+  
+  <script>preset_change("preset-1");</script>
+   <div class="pct-c-btn">
+  <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pc_layout">
+    <i class="ph-duotone ph-gear-six"></i>
+  </a>
+</div>
+{% endblock content %}

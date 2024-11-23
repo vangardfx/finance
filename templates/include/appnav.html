@@ -1,0 +1,170 @@
+{% load static %}
+<nav class="pc-sidebar">
+    <div class="navbar-wrapper">
+      <div class="m-header">
+        <a href="/app/dashboard" class="b-brand text-primary">
+          <!-- ========   Change your logo from here   ============ -->
+          <img src="{% static "assets/logo/1.png" %}" class="img-fluid logo-lg"height="200" width="150" alt="logo">
+          <span class="badge bg-light-success rounded-pill ms-2 theme-version">Fidele</span>
+        </a>
+        
+      </div>
+      <div class="navbar-content">
+        <div class="card pc-user-card">
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="flex-shrink-0">
+                <img src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="user-image"
+                  class="user-avtar wid-45 rounded-circle" />
+              </div>
+              <div class="flex-grow-1 ms-3 me-2">
+                <h6 class="mb-0">{{request.user.username|truncatechars:"12"}}</h6>
+                <small> 
+                    {% if request.user.total_invested < 1000 %}
+                    User (Tier 1)
+                    {% else %}
+                        Investor (Tier 2)
+                    {% endif %}
+                </small>
+              </div>
+              <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse" href="#pc_sidebar_userlink">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-sort-outline"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="collapse pc-user-links" id="pc_sidebar_userlink">
+              <div class="pt-3">
+                <a href="/app/dashboard">
+                  <i class="ti ti-user"></i>
+                  <span>My Dashboard</span>
+                </a>
+                <a href="/app/profile">
+                  <i class="ti ti-settings"></i>
+                  <span>Settings</span>
+                </a>
+                <a href="#!">
+                  <i class="ti ti-lock"></i>
+                  <span>Lock Screen</span>
+                </a>
+                <a href="#!">
+                  <i class="ti ti-power"></i>
+                  <span>Logout</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="pc-navbar">
+          
+
+          <li class="pc-item pc-caption">
+            <label>Pages</label>
+            <svg class="pc-icon">
+              <use xlink:href="#custom-presentation-chart"></use>
+            </svg>
+          </li>
+          <li class="pc-item">
+            <a href="{% url "core:profile" %}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-user-square"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">My Account</span>
+            </a>
+          </li>
+          <li class="pc-item">
+            <a href="{% url "core:deposit" %}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-direct-inbox"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Deposit</span>
+            </a>
+          </li>
+          <li class="pc-item">
+            <a href="{% url "core:withdraw" %}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-dollar-square"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Withdraw</span></a>
+          </li>
+          <li class="pc-item">
+            <a href="{% url "core:deposits" %}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-direct-inbox"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Deposits</span></a>
+          </li>
+          <li class="pc-item">
+            <a href="{% url "core:withdrawals" %}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-dollar-square"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Withdrawals</span></a>
+          </li>
+   
+          <li class="pc-item">
+            <a href="{% url "core:plans" %}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-box-1"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Investment Plans</span></a>
+          </li>
+
+          <li class="pc-item">
+            <a href="{% url "core:transactions" %}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-presentation-chart"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Transaction History</span></a>
+          </li>
+
+          <li class="pc-item">
+            <a href="{% url "core:referrals" %}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-crop"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Referrals</span></a>
+          </li>
+
+          <li class="pc-item">
+            <a href="{% url "userauths:lockscreen"%}" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-airplane"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Lock Screen</span></a>
+          </li>
+          <li class="pc-item">
+            <a  onclick="history.back()" href="#" class="pc-link">
+              <span class="pc-micon">
+                <svg class="pc-icon">
+                  <use xlink:href="#custom-mouse-circle"></use>
+                </svg>
+              </span>
+              <span class="pc-mtext">Back</span></a>
+          </li>
+         
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>

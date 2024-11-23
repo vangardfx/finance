@@ -1,0 +1,197 @@
+{% extends "partials/auth.html" %}
+{% load static %}
+{% block title %}Create Your FideleFinance Account - Start Trading Today{% endblock title %}
+{% block content %}
+
+<body data-pc-preset="preset-1" data-pc-sidebar-caption="true"
+  data-pc-direction="ltr" data-pc-theme_contrast
+  data-pc-theme="light">
+  <!-- [ Pre-loader ] start -->
+  <div class="loader-bg">
+    <div class="loader-track">
+      <div class="loader-fill"></div>
+    </div>
+  </div>
+  <!-- [ Pre-loader ] End -->
+
+  <div class="auth-main">
+    <div class="auth-wrapper v2">
+      <div class="auth-sidecontent">
+        <img src="{% static 'assets/images/cryptochart.jpg' %}" alt="images"
+          class="img-fluid img-auth-side">
+      </div>
+      <div class="auth-form">
+        <div class="card my-5">
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <a href="/"><img
+                 src="{% static 'assets/logo/bluelogo.png' %}" style="height: 32px; width: 210px;"
+                  alt="img"></a>
+
+            </div>
+            {% if form.errors %}
+            <div id="message-container">
+                <div class="alert alert-danger">
+                    <strong style="font-size: 13px;">{{ form.errors }}</strong>
+                </div>
+            </div>
+            {% else %}
+                <div id="message-container"></div>
+            {% endif %}
+
+           
+            <form id="signup-form" method="POST">
+              {% csrf_token %}
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group mb-3">
+                          {{ form.username }}
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="form-group mb-3">
+                          {{ form.contact }}
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group mb-3">
+                  {{ form.email }}
+              </div>
+              <div class="form-group mb-3">
+                  {{ form.address }}
+              </div>
+              <div class="form-group mb-3">
+                  {{ form.password1 }}
+              </div>
+              <div class="form-group mb-3">
+                  {{ form.password2 }}
+              </div>
+              <div class="d-flex mt-1 justify-content-between">
+                  <div class="form-check">
+                      <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" checked>
+                      <label class="form-check-label text-muted" for="customCheckc1">
+                          I agree to all the Terms & Conditions
+                      </label>
+                  </div>
+              </div>
+              <div class="d-grid mt-4">
+                  <button type="submit" id="registerBtn" class="btn btn-primary">Sign up</button>
+              </div>
+          </form>
+            <div class="d-flex justify-content-between align-items-end mt-4">
+              <h6 class="f-w-500 mb-0">Already have an Account?</h6>
+              <a href="/user/sign-in" class="link-primary">Sign in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('signup-form');
+    const messageContainer = document.getElementById('message-container');
+    const submitButton = document.getElementById('registerBtn');
+    const cardBody = document.querySelector('.card-body');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Prevent the form from reloading the page
+        submitButton.disabled = true;
+        submitButton.innerHTML = `
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Submitting...
+        `;
+        // Collect form data
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest', // Indicate it's an AJAX request
+                },
+                body: formData
+            });
+
+            const data = await response.json();
+
+            // Clear previous messages
+            messageContainer.innerHTML = '';
+
+            if (data.success) {
+                // Display success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'alert alert-success';
+                successMessage.innerHTML = '<strong>' + data.message + '</strong>';
+                messageContainer.appendChild(successMessage);
+                submitButton.disabled = false;
+                submitButton.innerHTML = `
+                    
+                    Sign up
+                `;
+                
+
+                // Clear existing content
+                cardBody.innerHTML = '';
+            
+                // Optional: Redirect or clear the form
+                form.reset();
+                cardBody.innerHTML = `
+                    <a href="#"><img src="https://fidelefinace.com/static/assets/logo/1.png" class="mb-4 img-fluid" alt="img"></a>
+                    <div class="mb-4">
+                        <h3 class="mb-2"><b>Hi, Check Your Mail</b></h3>
+                        <p class="text-muted">We have sent an Email verification link to your mail.</p>
+                    </div>
+                    <div class="d-grid mt-3">
+                        <button type="button" onclick="window.location.href='/user/sign-in';" class="btn btn-primary">Sign in</button>
+                    </div>
+                `;
+            } else {
+                // Display error messages
+                const errors = JSON.parse(data.errors); // Parse the JSON string to an object
+                submitButton.disabled = false;
+                submitButton.innerHTML = `
+                    
+                    Sign up
+                `;
+                for (const [field, messages] of Object.entries(errors)) {
+                    messages.forEach(message => {
+                        const errorMessage = document.createElement('div');
+                        errorMessage.className = 'alert alert-danger';
+                        errorMessage.innerHTML = '<strong>' + message.message + '</strong>';
+                        messageContainer.appendChild(errorMessage);
+                    });
+                }
+
+            }
+
+            // Remove messages after 5 seconds
+            setTimeout(() => {
+                messageContainer.innerHTML = '';
+            }, 5000);
+           
+
+        } catch (err) {
+            console.error('Error submitting the form:', err);
+        }
+    });
+</script>
+
+  <!-- [ Main Content ] end -->
+  <!-- Required Js -->
+  <script src="{% static 'assets/js/plugins/popper.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/simplebar.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/fonts/custom-font.js' %}"></script>
+  <script src="{% static 'assets/js/pcoded.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/feather.min.js' %}"></script>
+
+  <script>layout_change('light');</script>
+
+  <script>layout_theme_contrast_change('false');</script>
+
+  <div class="pct-c-btn">
+    <a href="#" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvas_pc_layout">
+      <i class="ph-duotone ph-gear-six"></i>
+    </a>
+  </div>
+  {% endblock content %}

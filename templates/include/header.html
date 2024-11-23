@@ -1,0 +1,58 @@
+{% load static %}
+<div data-uils="header" data-uils-title="Header" id="wrapper-navbar" itemscope
+itemtype="http://schema.org/WebSite"
+class="uicore uicore-navbar elementor-section elementor-section-boxed uicore-h-classic uicore-sticky ui-smart-sticky uicore-transparent ">
+<div class="uicore-header-wrapper">
+    <nav class="uicore elementor-container">
+        <div class="uicore-branding" data-uils="header-branding" data-uils-title="Site Logo">
+            <a href="/" rel="home">
+                <img class="uicore uicore-logo uicore-main"
+                    src="{% static 'assets/logo/bluelogo.png' %}" style=" height: 25px;" alt="FideleFinance" />
+                <img class="uicore uicore-logo uicore-second"
+                    src="{% static 'assets/logo/whitelogo.png' %}" style=" height: 30px;" alt="FideleFinance" />
+                <img class="uicore uicore-logo uicore-mobile-main"
+                    src="{% static 'assets/logo/bluelogo.png' %}" style=" height: 25px;" alt="FideleFinance" />
+                <img class="uicore uicore-logo uicore-mobile-second"
+                    src="{% static 'assets/logo/whitelogo.png' %}"  style=" height: 25px;" alt="FideleFinance" />
+            </a>
+        </div>
+        <div class="uicore-nav-menu">
+            <div class="uicore-menu-container uicore-nav">
+                <ul data-uils="header-menu" style="padding-left: 30px;" data-uils-title="Navigation Menu" class="uicore-menu">
+                    <li
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home page_item page-item-13 current_page_item menu-item-179">
+                        <a href="/" aria-current="page"><span
+                                class="ui-menu-item-wrapper">Home</span></a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182">
+                        <a href="/services"><span
+                                class="ui-menu-item-wrapper">Services</span></a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180">
+                        <a href="/about"><span class="ui-menu-item-wrapper">About
+                                Us</span></a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326">
+                        <a href="/contact"><span
+                                class="ui-menu-item-wrapper">Contact</span></a></li>
+                </ul>
+            </div>
+            <div class="uicore uicore-extra" data-uils="header_extra" data-uils-title="Header Extras">
+                <div class="uicore-cta-wrapper">
+                
+                    <a href="/user/sign-up" target="_self"  style="color: #fff !important;" class="uicore-btn ">
+                        <span class="elementor-button-text"  style="color: #fff !important;">
+                            Get Started</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="uicore-mobile-head-right"> <button type="button" class="uicore-toggle uicore-ham"
+                aria-label="mobile-menu">
+                <span class="bars">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+</div>
+</div>
