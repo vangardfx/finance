@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (index, contact_view, dashboard_view, profile_settings_view, services,
                     profile_view, plan_detail_view, send_payment_review, 
                     plans_view,deposit_view,send_deposit_review,transaction_view,deposits_view,search_view,withdraw_view,withdrawal_view,pricing,about,referral_view, get_user_devices,
-                    delete_device, transactions_api)
+                    delete_device)
 
 app_name = "core"
 
@@ -31,6 +31,5 @@ urlpatterns = [
     path('search/', search_view, name='search'),
     path('api/devices/', get_user_devices, name='get_user_devices'),
     path('api/devices/delete/<int:device_id>/', delete_device, name='delete_device'),
-    path('api/transactions', transactions_api, name="transaction_api"),
 
 ]

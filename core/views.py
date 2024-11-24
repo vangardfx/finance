@@ -90,6 +90,7 @@ def contact_view(request):
 @login_required
 def dashboard_view(request):
     user = request.user
+    user_transactions = Transaction.objects.filter(user=request.user).order_by('-timestamp')[:5]
     confirmed_deposits = Deposit.objects.filter(user=user, confirmed=True)
     total_deposit = confirmed_deposits.aggregate(total_amount=Sum('amount'))['total_amount'] or 0
     plans = Plan.objects.all().order_by('id')
@@ -97,13 +98,12 @@ def dashboard_view(request):
     context = {
         "plans": plans,
         "total_deposit": total_deposit,
+        'user_transactions': user_transactions,
     }
     
     return render(request, "core/dashboard-crypto.html", context)
 
-def transactions_api(request):
-    user_transactions = Transaction.objects.filter(user=request.user).order_by('-timestamp')[:5]
-    return JsonResponse({'transactions': user_transactions})
+
 
 @login_required
 def profile_view(request):

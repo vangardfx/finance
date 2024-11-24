@@ -19,7 +19,7 @@
         <img src="{% static 'assets/images/cryptochart.jpg' %}" alt="images"
           class="img-fluid img-auth-side">
       </div>
-      <div class="auth-form">
+      <div class="auth-form p-5">
         <div class="card my-5">
           <div class="card-body">
             <div class="text-center mb-3">
@@ -33,7 +33,7 @@
             
             </div>
         
-            <form id="login-form" method="POST">
+            <form id="login-form " method="POST">
               {% csrf_token %}
               <div class="form-group mb-3">
                 <input type="email" name="email" class="form-control" id="floatingInput" placeholder="Email Address">
