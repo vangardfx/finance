@@ -285,15 +285,15 @@
                     <div class="flex-shrink-0">
                       {% if t.plan_interval_processed %}
                       <span class="p-1 d-block bg-success rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
+                        <span class="visually-hidden">Complete</span>
                       </span>
                       {% elif t.confirmed %}
                       <span class="p-1 d-block bg-success rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
+                        <span class="visually-hidden">Confirmed</span>
                       </span>
                       {% elif not  t.confirmed %}
                       <span class="p-1 d-block bg-warning rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
+                        <span class="visually-hidden">Pending</span>
                       </span>
                       {% endif %}
                     </div>
