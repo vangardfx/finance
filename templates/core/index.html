@@ -144,20 +144,19 @@
 									</div>
 								  </div>
 								  <script>
-									$(document).ready(function() {
+									document.addEventListener("DOMContentLoaded", function () {
 										// Function to animate elements when they enter the viewport
-										function animateOnScroll(entries) {
+										function animateOnScroll(entries, observer) {
 											entries.forEach(entry => {
 												if (entry.isIntersecting) {
-													$(entry.target).animate({
-														opacity: 1,
-													}, 800);
+													const target = entry.target;
 								
-													$(entry.target).css({
-														'transform': 'translateY(0)'
-													});
+													// Animate opacity to 1
+													target.style.transition = "opacity 0.8s, transform 0.8s";
+													target.style.opacity = "1";
+													target.style.transform = "translateY(0)";
 								
-													observer.unobserve(entry.target); // Stop observing once animation is applied
+													observer.unobserve(target); // Stop observing once animation is applied
 												}
 											});
 										}
@@ -165,12 +164,17 @@
 										// Create an Intersection Observer instance
 										const observer = new IntersectionObserver(animateOnScroll, { threshold: 0.5 });
 								
-										// Observe each element with the specified class
-										$(".custom-h1, .header-p-tag, .uicore-btn").each(function() {
-											observer.observe(this);
+										// Select and observe each element with the specified class
+										document.querySelectorAll(".custom-h1, .header-p-tag, .uicore-btn").forEach(element => {
+											// Initial state before animation
+											element.style.opacity = "0";
+											element.style.transform = "translateY(20px)";
+								
+											observer.observe(element);
 										});
 									});
 								</script>
+								
 								  	<div class="carousel-item" data-bs-interval="5000">
 										<img src="{% static "assets/images/mgntrgj1.jpg" %}" style="height: 600px;" class="d-block w-100" alt="...">
 										<div class="carousel-caption custom-margin-top-3">
@@ -690,76 +694,58 @@
 															</div>
 														</div>
 														{% for p in plans %}
-														<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element" style="margin-bottom: 10px;"
-															data-id="a032daf" data-element_type="column">
-															<div class="elementor-widget-wrap elementor-element-populated" style="background: #AEAEAE1A; border-radius: 20px; padding: 20px; border-color: #8F8F8F2E; border-style: solid; border-width: 1px;">
-																<div class="elementor-widget-container">
-																	<div class="bdt-ep-advanced-icon-box">
-																		<div class="bdt-ep-advanced-icon-box-content">
-																			<!-- Icon -->
-																			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																				<path d="M2 10L6 4H18L22 10M2 10L12 20M2 10H22M12 20L22 10M12 20L16 10L12 4L8 10L12 20Z" 
-																					stroke="rgba(0,0,0,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-																			</svg>
-
-																			<!-- Plan Title -->
-																			<h4 class="bdt-ep-advanced-icon-box-title" style="margin-top: 10px;">
-																				{{ p.title }}
-																			</h4>
-
-																			<!-- Plan Pricing -->
-																			<div class="bdt-ep-advanced-icon-box-sub-title" style="font-weight: 600; font-size: 25px; padding-top: 25px;">
-																				${{ p.least_amount|intcomma }} - ${{ p.max_amount|intcomma }}
-																			</div>
-
-																			<!-- Plan Description -->
-																			<div class="bdt-ep-advanced-icon-box-description" style="margin-bottom: 10px;">
-																				<p>Crypto/Stocks/Forex</p>
-																			</div>
-																		</div>
-																	</div>
-
-																	<!-- Features List -->
-																	<div class="elementor-icon-list">
-																		<ul class="elementor-icon-list-items" style="align-items: center; justify-content: center; display: grid;">
-																			<li class="elementor-icon-list-item">
-																				<span class="elementor-icon-list-icon">
-																					<i class="fas fa-check"></i>
-																				</span>
-																				<span class="elementor-icon-list-text">
-																					{{ p.percentage_return }}% ROI daily for {{ p.description }}
-																				</span>
-																			</li>
-																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
-																				<span class="elementor-icon-list-icon">
-																					<i class="fas fa-check"></i>
-																				</span>
-																				<span class="elementor-icon-list-text">10% Referral Bonus</span>
-																			</li>
-																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
-																				<span class="elementor-icon-list-icon">
-																					<i class="fas fa-check"></i>
-																				</span>
-																				<span class="elementor-icon-list-text">1 Month Contract</span>
-																			</li>
-																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
-																				<span class="elementor-icon-list-icon">
-																					<i class="fas fa-check"></i>
-																				</span>
-																				<span class="elementor-icon-list-text">Automatic Payout</span>
-																			</li>
-																		</ul>
-																	</div>
-
-																	<!-- Call-to-Action Button -->
-																	<a href="{% url 'core:plan-detail' p.pid %}" 
-																	class="btn btn-lg rounded-2" 
-																	style="background: #0050b2; color: #fff; width: 100%; cursor: pointer; margin-bottom: 10px;">
-																		Activate Plan
-																	</a>
-																</div>
+														<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-d832122 animated zoomOut" data-id="d832122" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;zoomOut&quot;,&quot;animation_delay&quot;:300}">
+															<div class="elementor-widget-wrap elementor-element-populated">
+															<div class="elementor-element elementor-element-23ffc3a elementor-widget elementor-widget-heading" data-id="23ffc3a" data-element_type="widget" data-widget_type="heading.default">
+															<div class="elementor-widget-container">
+															<h4 class="elementor-heading-title elementor-size-default">Basic</h4> </div>
 															</div>
-														</div>
+															<div class="elementor-element elementor-element-48ec2b6 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="48ec2b6" data-element_type="widget" data-widget_type="heading.default">
+															<div class="elementor-widget-container">
+															<h2 class="elementor-heading-title elementor-size-default">$99</h2> </div>
+															</div>
+															<div class="elementor-element elementor-element-9d16dfe elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="9d16dfe" data-element_type="widget" data-widget_type="heading.default">
+															<div class="elementor-widget-container">
+															<h3 class="elementor-heading-title elementor-size-default">/Mo</h3> </div>
+															</div>
+															<div class="elementor-element elementor-element-d14c140 elementor-widget elementor-widget-heading" data-id="d14c140" data-element_type="widget" data-widget_type="heading.default">
+															<div class="elementor-widget-container">
+															<h5 class="elementor-heading-title elementor-size-default">For newbies and small teams:</h5> </div>
+															</div>
+															<div class="elementor-element elementor-element-0808d88 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="0808d88" data-element_type="widget" data-widget_type="icon-list.default">
+															<div class="elementor-widget-container">
+															<ul class="elementor-icon-list-items">
+															<li class="elementor-icon-list-item">
+															<span class="elementor-icon-list-icon">
+															<i aria-hidden="true" class="fas fa-check-circle"></i> </span>
+															<span class="elementor-icon-list-text">5 projects</span>
+															</li>
+															<li class="elementor-icon-list-item">
+															<span class="elementor-icon-list-icon">
+															<i aria-hidden="true" class="fas fa-check-circle"></i> </span>
+															<span class="elementor-icon-list-text">500 keywords to track</span>
+															</li>
+															<li class="elementor-icon-list-item">
+															<span class="elementor-icon-list-icon">
+															<i aria-hidden="true" class="fas fa-check-circle"></i> </span>
+															<span class="elementor-icon-list-text">10,000 results per report</span>
+															</li>
+															</ul>
+															</div>
+															</div>
+															<div class="elementor-element elementor-element-e48c4c7 elementor-align-justify elementor-widget elementor-widget-button" data-id="e48c4c7" data-element_type="widget" data-widget_type="button.default">
+															<div class="elementor-widget-container">
+															<div class="elementor-button-wrapper">
+															<a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-flip" href="#">
+															<span class="elementor-button-content-wrapper">
+															<span class="ui-btn-anim-wrapp"><span class="elementor-button-text">Choose</span><span class="elementor-button-text">Choose</span></span>
+															</span>
+															</a>
+															</div>
+															</div>
+															</div>
+															</div>
+															</div>
 														{% endfor %}
 
 													
@@ -990,7 +976,7 @@
 															</div>
 														</div>
 														<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-dbb9d8c elementor-invisible"
-															data-id="dbb9d8c" data-element_type="column"
+															data-id="dbb9d8c" data-element_type="column" style="margin-top: 50px"
 															data-settings="{&quot;animation&quot;:&quot;fadeInRight&quot;}">
 															<div
 																class="elementor-widget-wrap elementor-element-populated">
@@ -1007,7 +993,7 @@
 	"feedMode": "all_symbols",
 	"isTransparent": false,
 	"displayMode": "regular",
-	"width": "100%",
+	"width": "80%",
 	"height": "550",
 	"colorTheme": "light",
 	"locale": "en"
