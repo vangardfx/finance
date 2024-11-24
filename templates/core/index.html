@@ -650,64 +650,19 @@
 													data-id="8f5c40e" data-element_type="section" id="Montly"
 													data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;}">
 													<div class="elementor-container elementor-column-gap-default">
-														<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-97a9f83 elementor-invisible"
-															data-id="97a9f83" data-element_type="column"
-															data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;zoomOut&quot;,&quot;animation_delay&quot;:200}">
-															<div
-																class="elementor-widget-wrap elementor-element-populated">
-																<div class="elementor-background-overlay"></div>
-																<div class="elementor-element elementor-element-34b1905 elementor-widget elementor-widget-heading"
-																	data-id="34b1905" data-element_type="widget"
-																	data-widget_type="heading.default">
-																	<div class="elementor-widget-container">
-																		<h3
-																			class="elementor-heading-title elementor-size-default">
-																			Find a plan that's right for you.</h3>
-																	</div>
-																</div>
-																<div class="elementor-element elementor-element-e3c07a8 elementor-widget elementor-widget-image"
-																	data-id="e3c07a8" data-element_type="widget"
-																	data-widget_type="image.default">
-																	<div class="elementor-widget-container">
-																		<img loading="lazy" decoding="async" width="379"
-																			height="294"
-																			src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-1.webp' %}"
-																			class="attachment-full size-full wp-image-42"
-																			alt
-																			srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-1.webp 379w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-1-300x233.webp 300w"
-																			sizes="(max-width: 379px) 100vw, 379px" />
-																	</div>
-																</div>
-																<div class="elementor-element elementor-element-2d2c7ff elementor-widget elementor-widget-image"
-																	data-id="2d2c7ff" data-element_type="widget"
-																	data-widget_type="image.default">
-																	<div class="elementor-widget-container">
-																		<img loading="lazy" decoding="async" width="380"
-																			height="182"
-																			src="{% static 'wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-2.webp' %}"
-																			class="attachment-full size-full wp-image-43"
-																			alt
-																			srcset="https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-2.webp 380w, https://outgrid.uicore.co/seo-agency/wp-content/uploads/sites/10/2023/07/SEO-Agency-Plan-Image-2-300x144.webp 300w"
-																			sizes="(max-width: 380px) 100vw, 380px" />
-																	</div>
-																</div>
-															</div>
-														</div>
+														
 														{% for p in plans %}
 														<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-d832122 animated zoomOut" data-id="d832122" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;zoomOut&quot;,&quot;animation_delay&quot;:300}">
 															<div class="elementor-widget-wrap elementor-element-populated">
 															<div class="elementor-element elementor-element-23ffc3a elementor-widget elementor-widget-heading" data-id="23ffc3a" data-element_type="widget" data-widget_type="heading.default">
 															<div class="elementor-widget-container">
-															<h4 class="elementor-heading-title elementor-size-default">Basic</h4> </div>
+															<h4 class="elementor-heading-title elementor-size-default">{{p.title}}</h4> </div>
 															</div>
 															<div class="elementor-element elementor-element-48ec2b6 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="48ec2b6" data-element_type="widget" data-widget_type="heading.default">
 															<div class="elementor-widget-container">
-															<h2 class="elementor-heading-title elementor-size-default">$99</h2> </div>
+															<h5 class="elementor-heading-title elementor-size-default">${{p.least_amount}} - ${{p.max_amount}}</h5> </div>
 															</div>
-															<div class="elementor-element elementor-element-9d16dfe elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="9d16dfe" data-element_type="widget" data-widget_type="heading.default">
-															<div class="elementor-widget-container">
-															<h3 class="elementor-heading-title elementor-size-default">/Mo</h3> </div>
-															</div>
+															
 															<div class="elementor-element elementor-element-d14c140 elementor-widget elementor-widget-heading" data-id="d14c140" data-element_type="widget" data-widget_type="heading.default">
 															<div class="elementor-widget-container">
 															<h5 class="elementor-heading-title elementor-size-default">For newbies and small teams:</h5> </div>
