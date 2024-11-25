@@ -1,6 +1,6 @@
 from django.contrib import admin
 from userauths.models import User
-from .models import Transaction, Withdraw
+from .models import Transaction, Withdraw, UserDevice
 from django.contrib.admin import AdminSite
 
 
@@ -13,6 +13,9 @@ class UserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(User, UserAdmin)
+
+
+admin.site.register(UserDevice)
 
 # admin.py
 

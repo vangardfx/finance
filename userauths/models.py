@@ -323,3 +323,6 @@ class UserDevice(models.Model):
     
     def __str__(self):
         return f"{self.device_name} ({self.ip_address})"
+    
+    class Meta:
+        unique_together = ('user', 'ip_address', 'device_name')

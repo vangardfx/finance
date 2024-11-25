@@ -24,7 +24,12 @@
   
 
   <!-- [Favicon] icon -->
-  <link rel="icon" href="https://ableproadmin.com/assets/images/favicon.svg" type="image/x-icon"> <!-- [Font] Family -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon/apple-touch-icon.png" %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon/favicon-32x32.png" %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon/favicon-16x16.png" %}">
+	<link rel="manifest" href="{% static "favicon/site.webmanifest" %}">
+ <link rel="shortcut icon" href="{% static 'favicon/favicon-32x32.png' %}">
+ <link href="{% static "favicon/favicon.ico" %}" rel="icon">
 <link rel="stylesheet" href="{% static "assets/fonts/inter/inter.css" %}" id="main-font-link" />
 <!-- [Tabler Icons] https://tablericons.com -->
 <link rel="stylesheet" href="{% static "assets/fonts/tabler-icons.min.css" %}" >
@@ -37,9 +42,63 @@
 <!-- [Template CSS Files] -->
 <link rel="stylesheet" href="{% static "assets/css/style.css" %}" id="main-style-link" >
 <link rel="stylesheet" href="{% static "assets/css/style-preset.css" %}" >
-
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </head>
+<style>
+  /* Add this style to position the toasts at the top */
+  .toastify {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+  }
+  .info-toast{
+      background: #0050b2;
+  }
+  a{
+      text-decoration: none !important;
+  }
+</style>
+
+<script>
+  function generateRandomPhoneNumber() {
+      const digits = Math.floor(Math.random() * 10000000000).toString().padStart(10, '0');
+      return `${digits.substring(3, 6)}`;
+  }
+
+  function generateRandomValue() {
+      return (Math.floor(Math.random() * (50000 - 100 + 1)) + 100).toLocaleString();
+  }
+
+  function getRandomToastMessage() {
+      const templates = [
+          `User ${generateRandomPhoneNumber()} invested $${generateRandomValue()}`,
+          `User ${generateRandomPhoneNumber()} deposited $${generateRandomValue()}`,
+          `User ${generateRandomPhoneNumber()} upgraded plan`,
+          // Add more templates as needed
+      ];
+
+      const randomIndex = Math.floor(Math.random() * templates.length);
+      return templates[randomIndex];
+  }
+
+  function displayRandomToast() {
+      const toastMessage = getRandomToastMessage();
+
+      Toastify({
+          text: toastMessage,
+          duration: 5000,
+          close: true,
+          className: "info-toast",
+          position: "center",
+          gravity: 'top',
+      }).showToast();
+  }
+
+  setInterval(displayRandomToast, 15000);
+</script>
 <!-- [Head] end -->
  {% block content %}
  

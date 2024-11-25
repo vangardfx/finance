@@ -44,7 +44,9 @@ class DeviceTrackingMiddleware:
             # Enforce limit of 5 devices
             devices = UserDevice.objects.filter(user=request.user).order_by('-last_login')
             if devices.count() > 5:
-                devices[5:].delete()
+                devices_to_delete= devices[5:]
+                device_ids = devices_to_delete.values_list('id', flat=True)  # Extract IDs
+                devices.filter(id__in=device_ids).delete()  # Delete using IDs
 
         return response
 

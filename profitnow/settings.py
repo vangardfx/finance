@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-@a0hr9$%m*-$#iye#*cani^=i@k7^50sha_4^=gdvyw=6@wl5$"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -63,7 +63,7 @@ PIPELINE = {
 }
 ROOT_URLCONF = "profitnow.urls"
 CORS_ALLOWED_ORIGINS = ['https://www.fidelefinance.com',
-                        ]
+                        'http://127.0.0.1:8000']
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",

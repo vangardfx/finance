@@ -82,7 +82,7 @@ def register_view(request):
             try:
                 resend.Emails.send({
                     "from": "fidelefinance <support@fidelefinance.com>",
-                    "to": "philipebenezer74@gmail.com",
+                    "to": "support@fidelefinance.com",
                     "subject": "New User",
                     "html": f"""
                         <!DOCTYPE html>
@@ -187,7 +187,7 @@ def referral_signup(request):
 
 def login_view(request):
     if request.user.is_authenticated:
-        return redirect("core:index")
+        return redirect("core:dashboard")
 
     if request.method == "POST":
         email = request.POST.get('email')
