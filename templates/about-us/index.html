@@ -11,7 +11,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 
-	<title>About Us &#8211; Financial Consulting</title>
+	<title>About Us – Discover FideleFinance's Vision and Expertise</title>
 	<meta name="robots" content="max-image-preview:large" />
 
 	<script>
@@ -20,9 +20,9 @@
 		!function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff", "\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
 	</script>
 	<link rel="stylesheet" id="bdt-uikit-css"
-		href="wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikitf14a.css" media="all" />
+		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikitf14a.css' %}" media="all" />
 	<link rel="stylesheet" id="ep-helper-css"
-		href="wp-content/plugins/bdthemes-element-pack/assets/css/ep-helperca3f.css" media="all" />
+		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/ep-helperca3f.css' %}" media="all" />
 	<style id="wp-emoji-styles-inline-css">
 		img.wp-smiley,
 		img.emoji {
@@ -56,44 +56,39 @@
 		}
 	</style>
 	<link rel="stylesheet" id="elementor-frontend-css"
-		href="wp-content/plugins/elementor/assets/css/frontend-lite.min225e.css" media="all" />
+		href="{% static 'wp-content/plugins/elementor/assets/css/frontend-lite.min225e.css' %}" media="all" />
 	<link rel="stylesheet" id="elementor-post-46-css"
-		href="wp-content/uploads/sites/23/elementor/css/post-469153.css" media="all" />
+		href="{% static 'wp-content/uploads/sites/23/elementor/css/post-469153.css' %}" media="all" />
 	<link rel="stylesheet" id="elementor-icons-css"
-		href="wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min50c3.css" media="all" />
+		href="{% static 'wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min50c3.css' %}" media="all" />
 	<link rel="stylesheet" id="swiper-css"
-		href="wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min94a4.css" media="all" />
+		href="{% static 'wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min94a4.css' %}" media="all" />
 	<link rel="stylesheet" id="elementor-post-64-css"
-		href="wp-content/uploads/sites/23/elementor/css/post-640e3b.css" media="all" />
-	<link rel="stylesheet" id="uicore_global-css" href="wp-content/uploads/sites/23/uicore-global2239.css"
+		href="{% static 'wp-content/uploads/sites/23/elementor/css/post-640e3b.css' %}" media="all" />
+	<link rel="stylesheet" id="uicore_global-css" href="{% static 'wp-content/uploads/sites/23/uicore-global2239.css' %}"
 		media="all" />
 	<link rel="stylesheet" id="google-fonts-1-css"
 		href="https://fonts.googleapis.com/css?family=Inter%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CSpace+Grotesk%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPlus+Jakarta+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.4.3"
 		media="all" />
 	<link rel="stylesheet" id="elementor-icons-shared-0-css"
-		href="wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min52d5.css" media="all" />
+		href="{% static 'wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min52d5.css' %}" media="all" />
 	<link rel="stylesheet" id="elementor-icons-fa-regular-css"
-		href="wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min52d5.css" media="all" />
+		href="{% static 'wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min52d5.css' %}" media="all" />
 	<link rel="stylesheet" id="elementor-icons-fa-solid-css"
-		href="wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min52d5.css" media="all" />
+		href="{% static 'wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min52d5.css' %}" media="all" />
 	<link rel="stylesheet" id="elementor-icons-fa-brands-css"
-		href="wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min52d5.css" media="all" />
+		href="{% static 'wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min52d5.css' %}" media="all" />
 	<link rel="stylesheet" id="elementor-icons-shared-1-css"
-		href="wp-content/plugins/uicore-framework/assets/fonts/themify-icons8a54.css" media="all" />
+		href="{% static 'wp-content/plugins/uicore-framework/assets/fonts/themify-icons8a54.css' %}" media="all" />
 	<link rel="stylesheet" id="elementor-icons-uicore-icons-css"
-		href="wp-content/plugins/uicore-framework/assets/fonts/themify-icons8a54.css" media="all" />
+		href="{% static 'wp-content/plugins/uicore-framework/assets/fonts/themify-icons8a54.css' %}" media="all" />
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<script src="wp-includes/js/jquery/jquery.minf43b.js" id="jquery-core-js"></script>
-	<script src="wp-includes/js/jquery/jquery-migrate.min5589.j" id="jquery-migrate-js"></script>
+	<script src="{% static 'wp-includes/js/jquery/jquery.minf43b.js' %}" id="jquery-core-js"></script>
+	<script src="{% static 'wp-includes/js/jquery/jquery-migrate.min5589.j' %}" id="jquery-migrate-js"></script>
 
 	<link rel="canonical" href="index.html" />
-	<link rel="shortlink" href="index8cd4.html?p=64" />
-	<link rel="alternate" type="application/json+oembed"
-		href="wp-json/oembed/1.0/embedd5d8.json?url=https%3A%2F%2Foutgrid.uicore.co%2Ffinancial-consulting%2Fabout-us%2F" />
 	<link rel="alternate" type="text/xml+oembed"
 		href="wp-json/oembed/1.0/embed0afa?url=https%3A%2F%2Foutgrid.uicore.co%2Ffinancial-consulting%2Fabout-us%2F&amp;format=xml" />
-	<meta name="generator"
-		content="Elementor 3.19.0; features: e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap">
 	<meta name="theme-color" content="#6F82EA" />
 	<link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon/apple-touch-icon.png" %}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon/favicon-32x32.png" %}">
@@ -416,7 +411,7 @@
 															}
 														</style> <img fetchpriority="high" decoding="async" width="1200"
 															height="1015"
-															src="wp-content/uploads/sites/23/2023/11/financial-consulting-about.webp"
+															src="{% static 'wp-content/uploads/sites/23/2023/11/financial-consulting-about.webp' %}"
 															class="attachment-full size-full wp-image-335" alt
 															srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-about.webp 1200w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-about-300x254.webp 300w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-about-1024x866.webp 1024w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-about-768x650.webp 768w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-about-650x550.webp 650w"
 															sizes="(max-width: 1200px) 100vw, 1200px" />
@@ -428,7 +423,7 @@
 													data-widget_type="image.default">
 													<div class="elementor-widget-container">
 														<img decoding="async" width="418" height="108"
-															src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Hero-Image-2.webp"
+															src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Hero-Image-2.webp' %}"
 															class="attachment-full size-full wp-image-70" alt
 															srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Hero-Image-2.webp 418w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Hero-Image-2-300x78.webp 300w"
 															sizes="(max-width: 418px) 100vw, 418px" />
@@ -440,7 +435,7 @@
 													data-widget_type="image.default">
 													<div class="elementor-widget-container">
 														<img decoding="async" width="524" height="182"
-															src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Hero-Image-3.webp"
+															src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Hero-Image-3.webp' %}"
 															class="attachment-full size-full wp-image-71" alt
 															srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Hero-Image-3.webp 524w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Hero-Image-3-300x104.webp 300w"
 															sizes="(max-width: 524px) 100vw, 524px" />
@@ -492,7 +487,7 @@
 																	<div class="elementor-widget-container">
 																		<img loading="lazy" decoding="async" width="80"
 																			height="80"
-																			src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Journey-Image-3.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Journey-Image-3.webp' %}"
 																			class="attachment-full size-full wp-image-74"
 																			alt />
 																	</div>
@@ -529,7 +524,7 @@
 																	<div class="elementor-widget-container">
 																		<img loading="lazy" decoding="async" width="200"
 																			height="200"
-																			src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Journey-Image-5.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Journey-Image-5.webp' %}"
 																			class="attachment-full size-full wp-image-90"
 																			alt
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Journey-Image-5.webp 200w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Journey-Image-5-150x150.webp 150w"
@@ -568,7 +563,7 @@
 																	<div class="elementor-widget-container">
 																		<img loading="lazy" decoding="async" width="80"
 																			height="80"
-																			src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Journey-Image-4.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Journey-Image-4.webp' %}"
 																			class="attachment-full size-full wp-image-75"
 																			alt />
 																	</div>
@@ -627,7 +622,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-1.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-1.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-1.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-1-300x117.webp 300w"
@@ -638,7 +633,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-2.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-2.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-2.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-2-300x117.webp 300w"
@@ -649,7 +644,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-3.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-3.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-3.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-3-300x117.webp 300w"
@@ -660,7 +655,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-4.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-4.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-4.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-4-300x117.webp 300w"
@@ -671,7 +666,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-5.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-5.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-5.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-5-300x117.webp 300w"
@@ -682,7 +677,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-6.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-6.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-6.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-6-300x117.webp 300w"
@@ -693,7 +688,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-7.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-7.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-7.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-7-300x117.webp 300w"
@@ -704,7 +699,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-8.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-8.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-8.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-8-300x117.webp 300w"
@@ -715,7 +710,7 @@
 																	<figure class="bdt-logo-carousel-figure">
 																		<img loading="lazy" decoding="async" width="378"
 																			height="148"
-																			src="wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-9.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-9.webp' %}"
 																			class="bdt-logo-carousel-img bdt-image-mask elementor-animation-"
 																			alt="Brand Name : Brand Short Description Type Here."
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-9.webp 378w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/08/Financial-Consulting-Logo-9-300x117.webp 300w"
@@ -922,7 +917,7 @@
 																						<img loading="lazy"
 																							decoding="async" width="406"
 																							height="494"
-																							src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-1.webp"
+																							src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-1.webp' %}"
 																							class="attachment- size-"
 																							alt="John Doe"
 																							srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-1.webp 406w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-1-247x300.webp 247w"
@@ -968,7 +963,7 @@
 																						<img loading="lazy"
 																							decoding="async" width="406"
 																							height="494"
-																							src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-2.webp"
+																							src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-2.webp' %}"
 																							class="attachment- size-"
 																							alt="Lucas Graham"
 																							srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-2.webp 406w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-2-247x300.webp 247w"
@@ -1014,7 +1009,7 @@
 																						<img loading="lazy"
 																							decoding="async" width="406"
 																							height="494"
-																							src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-3.webp"
+																							src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-3.webp' %}"
 																							class="attachment- size-"
 																							alt="Will Mitchell"
 																							srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-3.webp 406w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-3-247x300.webp 247w"
@@ -1065,7 +1060,7 @@
 																						<img loading="lazy"
 																							decoding="async" width="406"
 																							height="494"
-																							src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-4.webp"
+																							src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-4.webp' %}"
 																							class="attachment- size-"
 																							alt="Mia Torres"
 																							srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-4.webp 406w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-4-247x300.webp 247w"
@@ -1111,7 +1106,7 @@
 																						<img loading="lazy"
 																							decoding="async" width="406"
 																							height="494"
-																							src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-5.webp"
+																							src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-5.webp' %}"
 																							class="attachment- size-"
 																							alt="Aiden Lee"
 																							srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-5.webp 406w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-5-247x300.webp 247w"
@@ -1157,7 +1152,7 @@
 																						<img loading="lazy"
 																							decoding="async" width="406"
 																							height="494"
-																							src="wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-6.webp"
+																							src="{% static 'wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-6.webp' %}"
 																							class="attachment- size-"
 																							alt="Aliah Lane"
 																							srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-6.webp 406w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/09/Financial-Consulting-About-Us-Team-Image-6-247x300.webp 247w"
@@ -1363,7 +1358,7 @@
 																	<div class="elementor-widget-container">
 																		<img loading="lazy" decoding="async" width="916"
 																			height="916"
-																			src="wp-content/uploads/sites/23/2023/11/financial-consulting-testimonial.webp"
+																			src="{% static 'wp-content/uploads/sites/23/2023/11/financial-consulting-testimonial.webp' %}"
 																			class="attachment-full size-full wp-image-271"
 																			alt
 																			srcset="https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-testimonial.webp 916w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-testimonial-300x300.webp 300w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-testimonial-150x150.webp 150w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-testimonial-768x768.webp 768w, https://outgrid.uicore.co/financial-consulting/wp-content/uploads/sites/23/2023/11/financial-consulting-testimonial-650x650.webp 650w"
@@ -1569,7 +1564,7 @@
 														data-widget_type="image.default">
 														<div class="elementor-widget-container">
 															<img loading="lazy" width="324" height="96"
-																src="wp-content/uploads/sites/23/2023/11/Logo-Outgrid-2.webp"
+																src="{% static 'assets/logo/whitelogo.png' %}"
 																class="attachment-full size-full wp-image-444" alt
 																 />
 														</div>
@@ -1586,7 +1581,7 @@
 														data-widget_type="icon-list.default">
 														<div class="elementor-widget-container">
 															<link rel="stylesheet"
-																href="wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+																href="{% static 'wp-content/plugins/elementor/assets/css/widget-icon-list.min.css' %}">
 															<ul class="elementor-icon-list-items">
 																<li class="elementor-icon-list-item">
 																	<a href="#">
@@ -1999,7 +1994,7 @@
 			<nav class="uicore elementor-container">
 				<div class="uicore-branding uicore-mobile">
 					<a href="index.html" rel="home">
-						<img class="uicore uicore-logo" src="wp-content/uploads/sites/23/2023/11/Logo-Outgrid.webp"
+						<img class="uicore uicore-logo" src="{% static 'wp-content/uploads/sites/23/2023/11/Logo-Outgrid.webp' %}"
 							alt="Financial Consulting" />
 					</a>
 				</div>
@@ -2052,44 +2047,44 @@
 		console.log('Powered By UiCore Framework v.5.0.8');
 	</script>
 	<link rel="stylesheet" id="ep-advanced-icon-box-css"
-		href="wp-content/plugins/bdthemes-element-pack/assets/css/ep-advanced-icon-boxca3f.css" media="all" />
+		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/ep-advanced-icon-boxca3f.css' %}" media="all" />
 	<link rel="stylesheet" id="ep-font-css"
-		href="wp-content/plugins/bdthemes-element-pack/assets/css/ep-fontca3f.css" media="all" />
+		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/ep-fontca3f.css' %}" media="all" />
 	<link rel="stylesheet" id="ep-logo-carousel-css"
-		href="wp-content/plugins/bdthemes-element-pack/assets/css/ep-logo-carouselca3f.css" media="all" />
-	<link rel="stylesheet" id="tippy-css" href="wp-content/plugins/bdthemes-element-pack/assets/css/tippyca3f.css"
+		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/ep-logo-carouselca3f.css' %}" media="all" />
+	<link rel="stylesheet" id="tippy-css" href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/tippyca3f.css' %}"
 		media="all" />
 	<link rel="stylesheet" id="ep-member-css"
-		href="wp-content/plugins/bdthemes-element-pack/assets/css/ep-memberca3f.css" media="all" />
+		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/ep-memberca3f.css' %}" media="all" />
 	<link rel="stylesheet" id="ep-review-card-carousel-css"
-		href="wp-content/plugins/bdthemes-element-pack/assets/css/ep-review-card-carouselca3f.css" media="all" />
-	<script src="wp-content/uploads/sites/23/uicore-global2239.js" id="uicore_global-js"></script>
+		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/ep-review-card-carouselca3f.css' %}" media="all" />
+	<script src="{% static 'wp-content/uploads/sites/23/uicore-global2239.js' %}" id="uicore_global-js"></script>
 	<script id="bdt-uikit-js-extra">
 		var element_pack_ajax_login_config = { "ajaxurl": "https:\/\/outgrid.uicore.co\/financial-consulting\/wp-admin\/admin-ajax.php", "language": "en", "loadingmessage": "Sending user info, please wait...", "unknownerror": "Unknown error, make sure access is correct!" };
 		var ElementPackConfig = { "ajaxurl": "https:\/\/outgrid.uicore.co\/financial-consulting\/wp-admin\/admin-ajax.php", "nonce": "b32eab65d0", "data_table": { "language": { "lengthMenu": "_MENU_ Entries", "info": "_START_ to _END_ of _TOTAL_ entries", "search": "Search :", "sZeroRecords": "No matching records found", "paginate": { "previous": "Previous", "next": "Next" } } }, "contact_form": { "sending_msg": "Sending message please wait...", "captcha_nd": "Invisible captcha not defined!", "captcha_nr": "Could not get invisible captcha response!" }, "mailchimp": { "subscribing": "Subscribing you please wait..." }, "search": { "more_result": "More Results", "search_result": "SEARCH RESULT", "not_found": "not found" }, "elements_data": { "sections": [], "columns": [], "widgets": [] } };
 	</script>
-	<script src="wp-content/plugins/bdthemes-element-pack/assets/js/bdt-uikit.minf14a.js" id="bdt-uikit-js"></script>
-	<script src="wp-content/plugins/elementor/assets/js/webpack.runtime.min225e.js"
+	<script src="{% static 'wp-content/plugins/bdthemes-element-pack/assets/js/bdt-uikit.minf14a.js' %}" id="bdt-uikit-js"></script>
+	<script src="{% static 'wp-content/plugins/elementor/assets/js/webpack.runtime.min225e.js' %}"
 		id="elementor-webpack-runtime-js"></script>
-	<script src="wp-content/plugins/elementor/assets/js/frontend-modules.min225e.js"
+	<script src="{% static 'wp-content/plugins/elementor/assets/js/frontend-modules.min225e.js' %}"
 		id="elementor-frontend-modules-js"></script>
-	<script src="wp-includes/js/jquery/ui/core.min3f14.js?ver=1.13.2" id="jquery-ui-core-js"></script>
+	<script src="{% static 'wp-includes/js/jquery/ui/core.min3f14.js' %}" id="jquery-ui-core-js"></script>
 	<script id="elementor-frontend-js-before">
 		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close", "a11yCarouselWrapperAriaLabel": "Carousel | Horizontal scrolling: Arrow Left & Right", "a11yCarouselPrevSlideMessage": "Previous slide", "a11yCarouselNextSlideMessage": "Next slide", "a11yCarouselFirstSlideMessage": "This is the first slide", "a11yCarouselLastSlideMessage": "This is the last slide", "a11yCarouselPaginationBulletMessage": "Go to slide" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile Portrait", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Landscape", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet Portrait", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Landscape", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } } }, "version": "3.19.0", "is_static": false, "experimentalFeatures": { "e_optimized_assets_loading": true, "e_optimized_css_loading": true, "additional_custom_breakpoints": true, "e_swiper_latest": true, "block_editor_assets_optimize": true, "ai-layout": true, "landing-pages": true, "e_image_loading_optimization": true, "e_global_styleguide": true }, "urls": { "assets": "https:\/\/outgrid.uicore.co\/financial-consulting\/wp-content\/plugins\/elementor\/assets\/" }, "swiperClass": "swiper", "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 64, "title": "About%20Us%20%E2%80%93%20Financial%20Consulting", "excerpt": "", "featuredImage": false } };
 	</script>
-	<script src="wp-content/plugins/elementor/assets/js/frontend.min225e.js" id="elementor-frontend-js"></script>
-	<script src="wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-advanced-icon-box.minca3f.js"
+	<script src="{% static 'wp-content/plugins/elementor/assets/js/frontend.min225e.js' %}" id="elementor-frontend-js"></script>
+	<script src="{% static 'wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-advanced-icon-box.minca3f.js' %}"
 		id="ep-advanced-icon-box-js"></script>
-	<script src="wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-background-overlay.minca3f.js"
+	<script src="{% static 'wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-background-overlay.minca3f.js' %}"
 		id="ep-background-overlay-js"></script>
-	<script src="wp-content/plugins/bdthemes-element-pack/assets/vendor/js/popper.min.js" id="popper-js"></script>
-	<script src="wp-content/plugins/bdthemes-element-pack/assets/vendor/js/tippy.all.min.js"
+	<script src="{% static 'wp-content/plugins/bdthemes-element-pack/assets/vendor/js/popper.min.js' %}" id="popper-js"></script>
+	<script src="{% static 'wp-content/plugins/bdthemes-element-pack/assets/vendor/js/tippy.all.min.js' %}"
 		id="tippyjs-js"></script>
-	<script src="wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-logo-carousel.minca3f.js"
+	<script src="{% static 'wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-logo-carousel.minca3f.js' %}"
 		id="ep-logo-carousel-js"></script>
-	<script src="wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-review-card-carousel.minca3f.js"
+	<script src="{% static 'wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-review-card-carousel.minca3f.js' %}"
 		id="ep-review-card-carousel-js"></script>
-	<script src="wp-content/plugins/bdthemes-element-pack/assets/js/common/helper.minca3f.js"
+	<script src="{% static 'wp-content/plugins/bdthemes-element-pack/assets/js/common/helper.minca3f.js' %}"
 		id="element-pack-helper-js"></script>
 
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4HRCJB" height="0" width="0"
