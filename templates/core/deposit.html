@@ -223,21 +223,21 @@
               {% for b in btc %}
               <div class="alert alert-secondary " style="justify-content: space-between; display: flex;" role="alert">
                 <span><img src="{% static "assets/images/btc.png" %}" height="30"> Pay with BTC</span>
-                <span class="copy-address" style="cursor: pointer;" data-address="{{b.address}}" data-feedback-id="feedback-{{ forloop.counter }}"> {{b.address}}</span>
+                <span class="copy-address" style="cursor: pointer;" data-address="{{b.address}}" data-feedback-id="feedback-{{ forloop.counter }}"> {{b.address|truncatechars:"15"}}</span>
               </div>
               <div class="copy-feedback m-3" id="feedback-{{ forloop.counter }}"></div>
               {% endfor %}
               {% for b in eth %}
               <div class="alert alert-secondary " style="justify-content: space-between; display: flex;" role="alert">
                 <span><img src="{% static "assets/images/eth.png" %}" height="30"> Pay with ETH</span>
-                <span class="copy-address" style="cursor: pointer;" data-address="{{b.address}}" data-feedback-id="feedback-2"> {{b.address}}</span>
+                <span class="copy-address" style="cursor: pointer;" data-address="{{b.address}}" data-feedback-id="feedback-2"> {{b.address|truncatechars:"15"}}</span>
               </div>
               <div class="copy-feedback m-3" id="feedback-2"></div>
               {% endfor %}
               {% for b in other %}
               <div class="alert alert-secondary " style="justify-content: space-between; display: flex;" role="alert">
                 <span><img src="{% static "assets/images/tether.png" %}" height="30"> Pay with USDT</span>
-                <span class="copy-address" style="cursor: pointer;" data-address="{{b.address}}" data-feedback-id="feedback-3"> {{b.address}}</span>
+                <span class="copy-address" style="cursor: pointer;" data-address="{{b.address}}" data-feedback-id="feedback-3"> {{b.address|truncatechars:"15"}}</span>
               </div>
               <div class="copy-feedback m-3" id="feedback-3"></div>
               {% endfor %}
