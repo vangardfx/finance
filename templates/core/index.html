@@ -24,6 +24,8 @@
 		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikitf14a.css' %}" media="all" />
 	<link rel="stylesheet" id="ep-helper-css"
 		href="{% static 'wp-content/plugins/bdthemes-element-pack/assets/css/ep-helperca3f.css' %}" media="all" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	<style id="wp-emoji-styles-inline-css">
 		img.wp-smiley,
 		img.emoji {
@@ -101,6 +103,66 @@
  <link rel="shortcut icon" href="{% static 'favicon/favicon-32x32.png' %}">
  <link href="{% static "favicon/favicon.ico" %}" rel="icon">
 </head>
+<script>
+		
+	function generateRandomPhoneNumber() {
+		return Math.floor(Math.random() * 5000) + 1;
+	}
+
+	function generateRandomValue() {
+		return (Math.floor(Math.random() * (50000 - 100 + 1)) + 100).toLocaleString();
+	}
+
+	function getRandomToastMessage() {
+		const templates = [
+			`User ${generateRandomPhoneNumber()}  invested  $${generateRandomValue()}`,
+			`User ${generateRandomPhoneNumber()}  deposited  $${generateRandomValue()}`,
+			`User ${generateRandomPhoneNumber()}  withdrew  $${generateRandomValue()}`,
+			`User ${generateRandomPhoneNumber()} upgraded plan`,
+			// Add more templates as needed
+		];
+
+		const randomIndex = Math.floor(Math.random() * templates.length);
+		return templates[randomIndex];
+	}
+
+	function displayRandomToast() {
+		const toastMessage = getRandomToastMessage();
+
+		Toastify({
+			text: toastMessage,
+			duration: 5000,
+			close: true,
+			className: "info-toast",
+			position: "center",
+			gravity: 'top',
+		}).showToast();
+	}
+
+	setInterval(displayRandomToast, 15000);
+</script>
+<style>
+	.info-toast{
+		background: #1235b4;
+		border-radius: 7px;
+		
+	}
+	button .toast-close{
+		color: #fff;
+		background: #fff;
+	}
+	.emoji{
+		color: #fff;
+		background: #fff;
+	}
+	a .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+		display: none;
+	}
+	.VIpgJd-ZVi9od-l4eHX-hSRGPd{
+		display: none;
+	}
+	
+</style>
 <style>
 	@media (max-width: 767px) {
 		.custom-margin-top {
@@ -1300,6 +1362,7 @@
 										</div>
 									</div>
 								</div>
+								
 								<div class="elementor-section elementor-top-section elementor-element elementor-element-3013f3e elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 									data-id="3013f3e" data-element_type="section">
 									<div class="elementor-container elementor-column-gap-no">
@@ -1506,6 +1569,163 @@
 										</div>
 									</div>
 								</div>
+								<div class="container text-center" style="margin-top: 40px;">
+									<h2 class="mb-5">Real Time Transactions</h2>
+									<div class="row justify-content-center">
+										<div class="col-md-4">
+											<h4 class="mb-3">Live Deposits</h4>
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Number</th>
+														<th>Country</th> <!-- Empty column for spacing -->
+													</tr>
+												</thead>
+												<tbody id="ledger-body">
+													<!-- Table rows will be added here -->
+												</tbody>
+											</table>
+								
+										</div>
+										<div class="col-md-1"></div> <!-- Add spacing between columns -->
+										<div class="col-md-4">
+											<h4 class="mb-3">Live Withdrawals</h4>
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Name</th>
+														<th>Number</th>
+														<th>Country</th> <!-- Empty column for spacing -->
+													</tr>
+												</thead>
+												<tbody id="ledger-body-2">
+													<!-- Table rows will be added here -->
+												</tbody>
+											</table>
+								
+										</div>
+									</div>
+								</div>
+								<script>
+									// Assuming namesJson is the JSON string served by your Python backend
+									var names = JSON.parse('{{namesJson|escapejs}}');
+									function getRandomNumber(min, max) {
+										return Math.floor(Math.random() * (max - min + 1)) + min;
+									}
+									// Function to get a random name from the names array
+									function getRandomName() {
+										return names[Math.floor(Math.random() * names.length)];
+									}
+								
+									function getRandomCountryCode() {
+										// This is a list of some country codes, you can expand it as needed
+										var countryCodes = [
+										"ad", "ae", "af", "ag", "ai", "al", "am", "ao", "aq", "ar", "as", "at", "au", "aw", "ax", "az",
+										"ba", "bb", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bl", "bm", "bn", "bo", "bq", "br", "bs", "bt", "bv", "bw", "by", "bz",
+										"ca", "cc", "cd", "cf", "cg", "ch", "ci", "ck", "cl", "cm", "cn", "co", "cr", "cu", "cv", "cw", "cx", "cy", "cz",
+										"de", "dj", "dk", "dm", "do", "dz",
+										"ec", "ee", "eg", "eh", "er", "es", "et",
+										"fi", "fj", "fk", "fm", "fo", "fr",
+										"ga", "gb", "gd", "ge", "gf", "gg", "gh", "gi", "gl", "gm", "gn", "gp", "gq", "gr", "gs", "gt", "gu", "gw", "gy",
+										"hk", "hm", "hn", "hr", "ht", "hu",
+										"id", "ie", "il", "im", "in", "io", "iq", "ir", "is", "it",
+										"je", "jm", "jo", "jp",
+										"ke", "kg", "kh", "ki", "km", "kn", "kp", "kr", "kw", "ky", "kz",
+										"la", "lb", "lc", "li", "lk", "lr", "ls", "lt", "lu", "lv", "ly",
+										"ma", "mc", "md", "me", "mf", "mg", "mh", "mk", "ml", "mm", "mn", "mo", "mp", "mq", "mr", "ms", "mt", "mu", "mv", "mw", "mx", "my", "mz",
+										"na", "nc", "ne", "nf", "ng", "ni", "nl", "no", "np", "nr", "nu", "nz",
+										"om",
+										"pa", "pe", "pf", "pg", "ph", "pk", "pl", "pm", "pn", "pr", "ps", "pt", "pw", "py",
+										"qa",
+										"re", "ro", "rs", "ru", "rw",
+										"sa", "sb", "sc", "sd", "se", "sg", "sh", "si", "sj", "sk", "sl", "sm", "sn", "so", "sr", "ss", "st", "sv", "sx", "sy", "sz",
+										"tc", "td", "tf", "tg", "th", "tj", "tk", "tl", "tm", "tn", "to", "tr", "tt", "tv", "tw", "tz",
+										"ua", "ug", "um", "us", "uy", "uz",
+										"va", "vc", "ve", "vg", "vi", "vn", "vu",
+										"wf", "ws",
+										"ye", "yt",
+										"za", "zm", "zw"
+									  ];
+									  
+									  
+										return countryCodes[Math.floor(Math.random() * countryCodes.length)];
+									}
+								
+									// Function to update ledger items for ledger-body
+									function updateLedgerItems1() {
+										var ledgerBody1 = document.getElementById('ledger-body');
+								
+										// Clear existing table rows
+										ledgerBody1.innerHTML = '';
+								
+										// Generate and append new table rows
+										for (var i = 0; i < 10; i++) {
+											var randomName = getRandomName();
+											var randomNumber = getRandomNumber(100, 50000);
+											var randomCountryCode = getRandomCountryCode();
+								
+											var row = document.createElement('tr');
+								
+											var nameCell = document.createElement('td');
+											nameCell.textContent = randomName;
+											row.appendChild(nameCell);
+								
+											var numberCell = document.createElement('td');
+											numberCell.textContent = '$'+  randomNumber.toLocaleString();
+											row.appendChild(numberCell);
+								
+											var flagCell = document.createElement('td');
+											var flagImg = document.createElement('img');
+											flagImg.src = `https://flagcdn.com/16x12/${randomCountryCode}.png`;
+											flagCell.appendChild(flagImg);
+											row.appendChild(flagCell);
+								
+											ledgerBody1.appendChild(row);
+										}
+									}
+								
+									// Function to update ledger items for ledger-body-2
+									function updateLedgerItems2() {
+										var ledgerBody2 = document.getElementById('ledger-body-2');
+								
+										// Clear existing table rows
+										ledgerBody2.innerHTML = '';
+								
+										// Generate and append new table rows
+										for (var i = 0; i < 10; i++) {
+											var randomName = getRandomName();
+											var randomNumber = getRandomNumber(100, 50000);
+											var randomCountryCode = getRandomCountryCode();
+								
+											var row = document.createElement('tr');
+								
+											var nameCell = document.createElement('td');
+											nameCell.textContent = randomName;
+											row.appendChild(nameCell);
+								
+											var numberCell = document.createElement('td');
+											numberCell.textContent = '$'+ randomNumber.toLocaleString();
+											row.appendChild(numberCell);
+								
+											var flagCell = document.createElement('td');
+											var flagImg = document.createElement('img');
+											flagImg.src = `https://flagcdn.com/16x12/${randomCountryCode}.png`;
+											flagCell.appendChild(flagImg);
+											row.appendChild(flagCell);
+								
+											ledgerBody2.appendChild(row);
+										}
+									}
+								
+									// Update ledger items every 3 seconds
+									setInterval(updateLedgerItems1, 2500);
+									setInterval(updateLedgerItems2, 3000);
+								
+									// Initial update
+									updateLedgerItems1();
+									updateLedgerItems2();
+								</script>
 								<section
 									class="elementor-section elementor-top-section elementor-element elementor-element-7f30998 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 									data-id="7f30998" data-element_type="section">
@@ -2240,8 +2460,7 @@
 										data-id="2820b6e" data-element_type="widget"
 										data-widget_type="text-editor.default">
 										<div class="elementor-widget-container">
-											Copyright: © 2023 FideleFinance WordPress theme by <a
-												href="https://uicore.co/">UiCore</a>. All Rights Reserved. </div>
+											Copyright: © 2023 FideleFinance </div>
 									</div>
 									<div class="elementor-element elementor-element-4c7a3ca elementor-icon-list--layout-inline elementor-widget__width-auto elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
 										data-id="4c7a3ca" data-element_type="widget"
@@ -2269,20 +2488,8 @@
 														<span class="elementor-icon-list-text"></span>
 													</a>
 												</li>
-												<li class="elementor-icon-list-item elementor-inline-item">
-													<a href="#">
-														<span class="elementor-icon-list-icon">
-															<i aria-hidden="true" class="fab fa-instagram"></i> </span>
-														<span class="elementor-icon-list-text"></span>
-													</a>
-												</li>
-												<li class="elementor-icon-list-item elementor-inline-item">
-													<a href="#">
-														<span class="elementor-icon-list-icon">
-															<i aria-hidden="true" class="fab fa-github"></i> </span>
-														<span class="elementor-icon-list-text"></span>
-													</a>
-												</li>
+										
+												
 											</ul>
 										</div>
 									</div>
@@ -2301,7 +2508,7 @@
 			<nav class="uicore elementor-container">
 				<div class="uicore-branding uicore-mobile">
 					<a href="/" rel="home">
-						<img class="uicore uicore-logo" src="{% static 'wp-content/uploads/sites/23/2023/11/Logo-Outgrid.webp' %}"
+						<img class="uicore uicore-logo" src="{% static 'assets/logo/bluelogo.png' %}"
 							alt="Financial Consulting" />
 					</a>
 				</div>
