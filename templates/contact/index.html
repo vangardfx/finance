@@ -85,19 +85,13 @@
 
 	<link rel="canonical" href="index.html" />
 	<link rel="shortlink" href="indexb8c4.html?p=123" />
-	<link rel="alternate" type="application/json+oembed"
-		href="wp-json/oembed/1.0/embeda877.json?url=https%3A%2F%2Foutgrid.uicore.co%2Ffinancial-consulting%2Fget-a-quote%2F" />
-	<link rel="alternate" type="text/xml+oembed"
-		href="wp-json/oembed/1.0/embed15ec?url=https%3A%2F%2Foutgrid.uicore.co%2Ffinancial-consulting%2Fget-a-quote%2F&amp;format=xml" />
-	<meta name="generator"
-		content="Elementor 3.19.0; features: e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap">
 	<meta name="theme-color" content="#6F82EA" />
-	<link rel="shortcut icon" href="wp-content/uploads/sites/23/2023/08/Outgrid-Favicon.png">
-	<link rel="icon" href="wp-content/uploads/sites/23/2023/08/Outgrid-Favicon.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="wp-content/uploads/sites/23/2023/08/Outgrid-Favicon.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="wp-content/uploads/sites/23/2023/08/Outgrid-Favicon.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="wp-content/uploads/sites/23/2023/08/Outgrid-Favicon.png">
-	<link rel="apple-touch-icon" href="wp-content/uploads/sites/23/2023/08/Outgrid-Favicon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon/apple-touch-icon.png" %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon/favicon-32x32.png" %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon/favicon-16x16.png" %}">
+	<link rel="manifest" href="{% static "favicon/site.webmanifest" %}">
+ <link rel="shortcut icon" href="{% static 'favicon/favicon-32x32.png' %}">
+ <link href="{% static "favicon/favicon.ico" %}" rel="icon">
 </head>
 
 <body
@@ -147,15 +141,15 @@
 									<div class="uicore-hca">
 										<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
 											<div class="wp-block-button"><a
-													class="wp-block-button__link wp-element-button" href="#">Get
+													class="wp-block-button__link wp-element-button" href="/user/sign-up">Get
 													Started</a></div>
 										</div>
 									</div>
 								</div>
 								<div class="uicore-cta-wrapper">
-									<a href="#" target="_self" class="uicore-btn uicore-inverted">
+									<a href="/user/sign-in" target="_self" class="uicore-btn uicore-inverted">
 										<span class="elementor-button-text">
-											Contact </span>
+											Sign In</span>
 									</a>
 								</div>
 							</div>
@@ -297,10 +291,11 @@
 																			<div class="elementor-form-fields-wrapper">
 																				<div class="bdt-contact-form-wrapper">
 																					<form
-																						class="bdt-contact-form-form bdt-form-stacked bdt-grid bdt-grid-small without-recaptcha"
+																						class="bdt-contact-form-form bdt-form-stacked bdt-grid bdt-grid-small"
 																						data-bdt-grid
-																						action="https://outgrid.uicore.co/financial-consulting/wp-admin/admin-ajax.php"
+																						
 																						method="post">
+																						{% csrf_token %}
 																						<div
 																							class="bdt-field-group elementor-field-required bdt-width-1-1">
 																							<label
@@ -330,20 +325,7 @@
 																									required="required">
 																							</div>
 																						</div>
-																						<div
-																							class="bdt-field-group bdt-width-1-1 elementor-field-required">
-																							<label for="contact66ae626"
-																								class="bdt-form-label">Phone
-																								Number</label>
-																							<div
-																								class="bdt-form-controls">
-																								<input type="tel"
-																									name="contact"
-																									id="contact66ae626"
-																									placeholder="Phone Number"
-																									class="bdt-input bdt-form-default">
-																							</div>
-																						</div>
+																					
 																						<div
 																							class="bdt-field-group bdt-width-1-1 elementor-field-required">
 																							<label for="subject66ae626"
@@ -351,9 +333,9 @@
 																							<div
 																								class="bdt-form-controls">
 																								<input type="text"
-																									name="subject"
+																									name="question"
 																									id="subject66ae626"
-																									placeholder="Company Name (Optional)"
+																									placeholder="Account, How to deposit, Withdraw...."
 																									class="bdt-input bdt-form-default"
 																									required="required">
 																							</div>
@@ -364,7 +346,7 @@
 																								class="bdt-form-label">Message</label>
 																							<div
 																								class="bdt-form-controls">
-																								<textarea name="message"
+																								<textarea name="question_details"
 																									id="message66ae626"
 																									rows="5"
 																									placeholder="Message"
@@ -372,17 +354,7 @@
 																									required="required"></textarea>
 																							</div>
 																						</div>
-																						<input type="hidden"
-																							class="widget_id"
-																							name="widget_id"
-																							value="66ae626" />
-																						<input type="hidden"
-																							name="bdt-sf-66ae626"
-																							value="true" />
-																						<input type="hidden"
-																							class="page_id"
-																							name="page_id"
-																							value="123" />
+																						
 																						<div
 																							class="elementor-field-type-submit bdt-field-group bdt-flex bdt-width-1-1">
 																							<button type="submit"
@@ -392,12 +364,7 @@
 																									Message</span>
 																							</button>
 																						</div>
-																						<input name="_wpnonce"
-																							value="3763cf13ac"
-																							type="hidden">
-																						<input type="hidden"
-																							name="action"
-																							value="element_pack_contact_form" />
+																						
 																					</form>
 																				</div>
 																			</div>
@@ -777,7 +744,7 @@
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
 																<a class="elementor-button elementor-button-link elementor-size-sm"
-																	href="#">
+																	href="/user/sign-up">
 																	<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">Get
 																			Started</span>
@@ -792,10 +759,9 @@
 														<div class="elementor-widget-container">
 															<div class="elementor-button-wrapper">
 																<a class="elementor-button elementor-button-link elementor-size-sm"
-																	href="#">
+																	href="/user/sign-in">
 																	<span class="elementor-button-content-wrapper">
-																		<span class="elementor-button-text">Let's
-																			Talk</span>
+																		<span class="elementor-button-text">Sign In</span>
 																	</span>
 																</a>
 															</div>
