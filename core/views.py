@@ -79,7 +79,7 @@ def contact_view(request):
         if form.is_valid():
             form.save()
             messages.success(request,"Thanks, message sent succesfully")
-            return redirect('core:index')
+           
     else:
         form = ContactForm()
 

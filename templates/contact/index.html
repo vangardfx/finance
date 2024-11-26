@@ -230,6 +230,20 @@
 														<h1 class="elementor-heading-title elementor-size-default">Reach out to us</h1>
 													</div>
 												</div>
+											
+															<script>
+																// Get the reference to the div
+																// Define a function to be executed after a delay
+																function hideDiv() {
+																	// Get the div with id 'alert' and set its 'display' property to 'none' to hide it
+																	document.getElementById('alert').style.display = 'none';
+																	
+																}
+
+																// Set a timeout for 3000 milliseconds (3 seconds)
+																setTimeout(hideDiv, 5000);
+
+															</script>
 												<section
 													class="elementor-section elementor-inner-section elementor-element elementor-element-debc28b elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
 													data-id="debc28b" data-element_type="section"
@@ -238,6 +252,7 @@
 														<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-4ec7a41"
 															data-id="4ec7a41" data-element_type="column"
 															data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+															
 															<div
 																class="elementor-widget-wrap elementor-element-populated">
 																<div class="elementor-element elementor-element-fb9fbdd elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor"
@@ -278,9 +293,18 @@
 																			}
 																		</style> Let us know you – your situation, goals
 																		and needs – then connect you with an advisor
-																		committed to helping you pursue true wealth.
+																		committed to helping you pursue true wealth.<br>
+																		{% if messages %}
+																		{% for message in messages %}
+																		<div class="alert alert-{{message.tags}} elementor-button bdt-button bdt-button-primary"  id="alert">
+																			<strong>{{ message }}</strong>
+																		</div>
+														
+																		{% endfor %}
+																		{% endif %}
 																	</div>
 																</div>
+																
 																<div class="elementor-element elementor-element-66ae626 elementor-button-align-stretch elementor-widget elementor-widget-bdt-contact-form"
 																	data-id="66ae626" data-element_type="widget"
 																	data-widget_type="bdt-contact-form.default">
@@ -293,7 +317,7 @@
 																						class="bdt-contact-form-form bdt-form-stacked bdt-grid bdt-grid-small"
 																						data-bdt-grid
 																						
-																						method="post">
+																						method="post" id="formBdt">
 																						{% csrf_token %}
 																						<div
 																							class="bdt-field-group elementor-field-required bdt-width-1-1">
@@ -331,12 +355,7 @@
 																								class="bdt-form-label">Subject*</label>
 																							<div
 																								class="bdt-form-controls">
-																								<input type="text"
-																									name="question"
-																									id="subject66ae626"
-																									placeholder="Account, How to deposit, Withdraw...."
-																									class="bdt-input bdt-form-default"
-																									required="required">
+																								{{form.question}}
 																							</div>
 																						</div>
 																						<div
@@ -555,14 +574,11 @@
 																		</span>
 																		<span
 																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
-																			What does Fidelefinance do? </span>
+																			What does FideleFinance do? </span>
 																	</div>
 																	<div
 																		class="bdt-ep-accordion-content bdt-accordion-content">
-																		Tincidunt condimentum vivamus urna velit
-																		praesent vulputate at a viverra. Sed viverra
-																		lectus nullam est sagittis sed. Accumsan neque
-																		faucibus mattis facilisis a. </div>
+																		FideleFinance is an all-in-one platform that offers trading and investment opportunities in Forex, cryptocurrencies, stocks, indices, and commodities. We provide cutting-edge tools and personalized plans to help you achieve financial independence. </div>
 																</div>
 																<div class="bdt-ep-accordion-item">
 																	<div class="bdt-ep-accordion-title bdt-accordion-title bdt-flex bdt-flex-middle bdt-flex-between"
@@ -584,15 +600,16 @@
 																		</span>
 																		<span
 																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
-																			Varius porttitor nisl diam non. Turpis
-																			mauris augue tincidunt? </span>
+																			How do I start investing with FideleFinance? </span>
 																	</div>
 																	<div
 																		class="bdt-ep-accordion-content bdt-accordion-content">
-																		Tincidunt condimentum vivamus urna velit
-																		praesent vulputate at a viverra. Sed viverra
-																		lectus nullam est sagittis sed. Accumsan neque
-																		faucibus mattis facilisis a. </div>
+																		To begin investing:
+
+																		Create an account on our platform.
+																		Deposit funds using any of our secure payment methods.
+																		Choose your preferred investment plan or start trading in the market of your choice. 
+																	</div>
 																</div>
 																<div class="bdt-ep-accordion-item">
 																	<div class="bdt-ep-accordion-title bdt-accordion-title bdt-flex bdt-flex-middle bdt-flex-between"
@@ -614,15 +631,19 @@
 																		</span>
 																		<span
 																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
-																			Nisi cursus proin ultricies elit pharetra in
-																			ac enim morbi? </span>
+																			What investment options are available?</span>
 																	</div>
 																	<div
 																		class="bdt-ep-accordion-content bdt-accordion-content">
-																		Tincidunt condimentum vivamus urna velit
-																		praesent vulputate at a viverra. Sed viverra
-																		lectus nullam est sagittis sed. Accumsan neque
-																		faucibus mattis facilisis a. </div>
+																		FideleFinance offers a variety of investment options, including:
+
+																		Forex Trading
+																		Cryptocurrency Investment
+																		Stock Trading
+																		Copy-Trading Indices
+																		Commodities (e.g., gold, oil, agricultural products)
+																		Tailored investment plans for short-term or long-term goals. 
+																	</div>
 																</div>
 																<div class="bdt-ep-accordion-item">
 																	<div class="bdt-ep-accordion-title bdt-accordion-title bdt-flex bdt-flex-middle bdt-flex-between"
@@ -644,15 +665,12 @@
 																		</span>
 																		<span
 																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
-																			Amet turpis diam sapien ut varius. In id ut
-																			non quis lectu? </span>
+																			Is my money safe with FideleFinance?</span>
 																	</div>
 																	<div
 																		class="bdt-ep-accordion-content bdt-accordion-content">
-																		Tincidunt condimentum vivamus urna velit
-																		praesent vulputate at a viverra. Sed viverra
-																		lectus nullam est sagittis sed. Accumsan neque
-																		faucibus mattis facilisis a. </div>
+																		Yes, your funds and data are secured using advanced encryption and robust security protocols. We are committed to providing a safe and reliable platform for your investments.
+																	</div>
 																</div>
 																<div class="bdt-ep-accordion-item">
 																	<div class="bdt-ep-accordion-title bdt-accordion-title bdt-flex bdt-flex-middle bdt-flex-between"
@@ -674,15 +692,120 @@
 																		</span>
 																		<span
 																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
-																			Sed vitae non ut quam ullamcorper malesuada
-																			aliquam? </span>
+																			Can I withdraw my investment returns at any time? </span>
 																	</div>
 																	<div
 																		class="bdt-ep-accordion-content bdt-accordion-content">
-																		Tincidunt condimentum vivamus urna velit
-																		praesent vulputate at a viverra. Sed viverra
-																		lectus nullam est sagittis sed. Accumsan neque
-																		faucibus mattis facilisis a. </div>
+																		Yes, you can monitor your earnings in real-time and withdraw funds conveniently whenever you wish, subject to the terms of your selected investment plan.
+																	</div>
+																</div>
+																<div class="bdt-ep-accordion-item">
+																	<div class="bdt-ep-accordion-title bdt-accordion-title bdt-flex bdt-flex-middle bdt-flex-between"
+																		id="bdt-ep-accordion-sed-vitae-non-ut-quam-ullamcorper-malesuada-aliquam"
+																		data-accordion-index="4"
+																		data-title="sed-vitae-non-ut-quam-ullamcorper-malesuada-aliquam"
+																		role="heading">
+																		<span
+																			class="bdt-ep-accordion-icon bdt-flex-align-right"
+																			aria-hidden="true">
+																			<span class="bdt-ep-accordion-icon-closed">
+																				<i aria-hidden="true"
+																					class="fa-fw fas fa-plus"></i>
+																			</span>
+																			<span class="bdt-ep-accordion-icon-opened">
+																				<i aria-hidden="true"
+																					class="fa-fw fas fa-minus"></i>
+																			</span>
+																		</span>
+																		<span
+																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
+																			How much do I need to start investing?</span>
+																	</div>
+																	<div
+																		class="bdt-ep-accordion-content bdt-accordion-content">
+																		FideleFinance allows you to start with a low minimum deposit, making investments accessible to everyone. The exact amount may vary depending on the selected investment plan or trading option.
+																	</div>
+																</div>
+																<div class="bdt-ep-accordion-item">
+																	<div class="bdt-ep-accordion-title bdt-accordion-title bdt-flex bdt-flex-middle bdt-flex-between"
+																		id="bdt-ep-accordion-sed-vitae-non-ut-quam-ullamcorper-malesuada-aliquam"
+																		data-accordion-index="4"
+																		data-title="sed-vitae-non-ut-quam-ullamcorper-malesuada-aliquam"
+																		role="heading">
+																		<span
+																			class="bdt-ep-accordion-icon bdt-flex-align-right"
+																			aria-hidden="true">
+																			<span class="bdt-ep-accordion-icon-closed">
+																				<i aria-hidden="true"
+																					class="fa-fw fas fa-plus"></i>
+																			</span>
+																			<span class="bdt-ep-accordion-icon-opened">
+																				<i aria-hidden="true"
+																					class="fa-fw fas fa-minus"></i>
+																			</span>
+																		</span>
+																		<span
+																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
+																			How long does it take to process withdrawals?</span>
+																	</div>
+																	<div
+																		class="bdt-ep-accordion-content bdt-accordion-content">
+																		Withdrawal times may vary depending on the payment method used. However, we strive to process all withdrawal requests as quickly as possible, typically within 24–48 hours.
+																	</div>
+																</div>
+																<div class="bdt-ep-accordion-item">
+																	<div class="bdt-ep-accordion-title bdt-accordion-title bdt-flex bdt-flex-middle bdt-flex-between"
+																		id="bdt-ep-accordion-sed-vitae-non-ut-quam-ullamcorper-malesuada-aliquam"
+																		data-accordion-index="4"
+																		data-title="sed-vitae-non-ut-quam-ullamcorper-malesuada-aliquam"
+																		role="heading">
+																		<span
+																			class="bdt-ep-accordion-icon bdt-flex-align-right"
+																			aria-hidden="true">
+																			<span class="bdt-ep-accordion-icon-closed">
+																				<i aria-hidden="true"
+																					class="fa-fw fas fa-plus"></i>
+																			</span>
+																			<span class="bdt-ep-accordion-icon-opened">
+																				<i aria-hidden="true"
+																					class="fa-fw fas fa-minus"></i>
+																			</span>
+																		</span>
+																		<span
+																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
+																			What happens if I need assistance?</span>
+																	</div>
+																	<div
+																		class="bdt-ep-accordion-content bdt-accordion-content">
+																		Our professional support team is available 24/7 to assist you with any queries or issues. You can reach out to us via live chat or email
+																	</div>
+																</div>
+																<div class="bdt-ep-accordion-item">
+																	<div class="bdt-ep-accordion-title bdt-accordion-title bdt-flex bdt-flex-middle bdt-flex-between"
+																		id="bdt-ep-accordion-sed-vitae-non-ut-quam-ullamcorper-malesuada-aliquam"
+																		data-accordion-index="4"
+																		data-title="sed-vitae-non-ut-quam-ullamcorper-malesuada-aliquam"
+																		role="heading">
+																		<span
+																			class="bdt-ep-accordion-icon bdt-flex-align-right"
+																			aria-hidden="true">
+																			<span class="bdt-ep-accordion-icon-closed">
+																				<i aria-hidden="true"
+																					class="fa-fw fas fa-plus"></i>
+																			</span>
+																			<span class="bdt-ep-accordion-icon-opened">
+																				<i aria-hidden="true"
+																					class="fa-fw fas fa-minus"></i>
+																			</span>
+																		</span>
+																		<span
+																			class="bdt-ep-title-text bdt-flex bdt-flex-middle">
+																			Are there any risks involved in investing with FideleFinance?</span>
+																	</div>
+																	<div
+																		class="bdt-ep-accordion-content bdt-accordion-content">
+																		As with any investment, there are inherent risks. However, FideleFinance helps you mitigate risks by providing tools, insights, and personalized plans to make informed decisions and diversify your portfolio.
+																	</div>
 																</div>
 															</div>
 														</div>
