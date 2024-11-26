@@ -62,6 +62,7 @@ def perform_daily_task():
 
 
 def register_view(request):
+    ref = request.GET.get('ref')
     if request.method == "POST" and request.headers.get('X-Requested-With') == 'XMLHttpRequest':  # Check for AJAX
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -117,7 +118,8 @@ def register_view(request):
             'success': False,
             'errors': form.errors.as_json()
         }, status=400)
-
+    if ref:
+        form.fields['referred'].initial = ref
     # Standard response for non-AJAX requests
     form = UserRegisterForm()
     return render(request, 'userauths/sign-up.html', {'form': form})

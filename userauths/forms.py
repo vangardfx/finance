@@ -64,7 +64,7 @@ class UserRegisterForm(UserCreationForm):
     btc_address = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "BTC address", "class": "form-control",}), required=False)
     eth_address = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "ETH address", "class": "form-control"}), required=False)
     usdt_address = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "USDT address", "class": "form-control",}), required=False)
-    referred = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "*Optional","class": "form-control"}),validators=[validate_referral_code], required=False)
+    referred = forms.CharField(widget=forms.HiddenInput(attrs={"placeholder": "*Optional","class": "form-control",}),validators=[validate_referral_code], required=False)
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Password", "class": "form-control","id":"password-field"}))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Confirm Password", "class": "form-control","id":"password-field2"}))
     
