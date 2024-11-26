@@ -1030,6 +1030,107 @@
 										</div>
 									</div>
 								</section>
+								<div class="elementor-section elementor-top-section elementor-element elementor-element-e6cc3d4 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="e6cc3d4" data-element_type="section"
+								data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+								<div class="elementor-container elementor-column-gap-no">
+									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-61c48e4"
+										data-id="61c48e4" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-section elementor-inner-section elementor-element elementor-element-353bb2c animated-fast elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+												data-id="353bb2c" data-element_type="section" id="Monthly"
+												data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+												<div class="elementor-container elementor-column-gap-default">
+													{% for p in plans %}
+													<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-a032daf"
+														data-id="a032daf" data-element_type="column" >
+														<div
+															class="elementor-widget-wrap elementor-element-populated" >
+															<div class="elementor-element elementor-element-7fb21f5 bdt-icon-type-icon elementor-position-top bdt-icon-effect-none elementor-widget elementor-widget-bdt-advanced-icon-box"
+																data-id="7fb21f5" data-element_type="widget"
+																data-widget_type="bdt-advanced-icon-box.default">
+																<div class="elementor-widget-container" style="background: #AEAEAE1A; border-radius: 20px; padding: 20px; border-color: #8F8F8F2E; border-style: solid; border-width: 1px;">
+																	<div class="bdt-ep-advanced-icon-box">
+																		<div
+																			class="bdt-ep-advanced-icon-box-content">
+																			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10L6 4H18L22 10M2 10L12 20M2 10H22M12 20L22 10M12 20L16 10L12 4L8 10L12 20Z" stroke="rgba(0,0,0,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+																			<h4 style="margin-top: 10px;"
+																				class="bdt-ep-advanced-icon-box-title">
+																				<span>
+																					{{p.title}} </span>
+																			</h4>
+																			<div
+																				class="bdt-ep-advanced-icon-box-sub-title" style="font-weight: 600 !important; font-size: 25px; padding-top: 25px;">
+																				${{p.least_amount|intcomma}} - ${{p.max_amount|intcomma}} </div>
+																		    <div
+																				class="bdt-ep-advanced-icon-box-description"  >
+																		
+																				<p>Crypto/Stocks/Forex</p>
+																			</div>
+																			
+																		</div>
+																	</div>
+																	<div class="elementor-element elementor-element-0209582 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+																	data-id="0209582" data-element_type="widget"
+																	data-widget_type="icon-list.default">
+																	<div class="elementor-widget-container">
+																		<ul class="elementor-icon-list-items" style="align-items: center; justify-content: center; display: grid;">
+																			<li class="elementor-icon-list-item">
+																				<span class="elementor-icon-list-icon">
+																					<i aria-hidden="true"
+																						class="fas fa-check"></i>
+																				</span>
+																				<span
+																					class="elementor-icon-list-text">{{p.percentage_return}}% ROI daily for {{p.description}}</span>
+																			</li>
+																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
+																				<span class="elementor-icon-list-icon">
+																					<i aria-hidden="true"
+																						class="fas fa-check"></i>
+																				</span>
+																				<span
+																					class="elementor-icon-list-text">10% Referral Bonus</span>
+																			</li>
+																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
+																				<span class="elementor-icon-list-icon">
+																					<i aria-hidden="true"
+																						class="fas fa-check"></i>
+																				</span>
+																				<span
+																					class="elementor-icon-list-text">1 Month Contract</span>
+																			</li>
+																			<li class="elementor-icon-list-item" style="margin-top: 12px;">
+																				<span class="elementor-icon-list-icon">
+																					<i aria-hidden="true"
+																						class="fas fa-check"></i>
+																				</span>
+																				<span
+																					class="elementor-icon-list-text">Automatic Payout</span>
+																					
+																			</li>
+																			
+																		
+																		</ul>
+																	</div>
+																</div>
+															<a href="{% url "core:plan-detail" p.pid %}" class="btn btn-lg rounded-2" style="background: #0050b2; color: #fff;  width: 100%; cursor: pointer; margin-bottom: 10px;">Activate Plan</a>
+
+																</div>
+															</div>
+															
+
+														</div>
+													</div>
+													{% endfor %}
+													
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									
+								</div>
+							</div>
 								<div class="elementor-section elementor-top-section elementor-element elementor-element-a77713a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 									data-id="a77713a" data-element_type="section">
 									<div class="elementor-container elementor-column-gap-default">
@@ -1061,21 +1162,10 @@
 																							class="bdt-ep-review-card-carousel-content">
 																							<h3
 																								class="bdt-ep-review-card-carousel-name">
-																								- James McAvoy, CEO of
-																								Cloud </h3>
+																								- Peter Woods, USA </h3>
 																							<div
 																								class="bdt-ep-review-card-carousel-text">
-																								<p>“FideleFinance has
-																									completely changed
-																									our outlook on
-																									finance. Their
-																									personalized
-																									services and
-																									insightful advice
-																									have given us the
-																									confidence to make
-																									sound financial
-																									decisions.”</p>
+																								<p>“FideleFinance has revolutionized the way we approach investments. Their innovative strategies and expert guidance have empowered us to take control of our financial future with confidence and ease.”</p>
 																							</div>
 																						</div>
 																					</div>
@@ -1085,24 +1175,11 @@
 																							class="bdt-ep-review-card-carousel-content">
 																							<h3
 																								class="bdt-ep-review-card-carousel-name">
-																								- Jackma Kalin, CEO of
-																								Penta </h3>
+																								- David L., South Africa
+																								 </h3>
 																							<div
 																								class="bdt-ep-review-card-carousel-text">
-																								<p>"FideleFinance's
-																									transformative
-																									services
-																									revolutionized our
-																									financial strategy.
-																									Their personalized
-																									approach and expert
-																									guidance instilled
-																									newfound confidence,
-																									empowering us to
-																									make informed
-																									decisions and shape
-																									a secure financial
-																									future."</p>
+																								<p>"The all-in-one platform is a dream for traders like me. Whether it’s Forex, crypto, or stocks, All my investments are managed easily from one account. Highly recommended!"</p>
 																							</div>
 																						</div>
 																					</div>
@@ -1112,23 +1189,10 @@
 																							class="bdt-ep-review-card-carousel-content">
 																							<h3
 																								class="bdt-ep-review-card-carousel-name">
-																								- Amily Moalin, CEO of
-																								Chain </h3>
+																								- Maria P., Canada</h3>
 																							<div
 																								class="bdt-ep-review-card-carousel-text">
-																								<p>"With FideleFinance, our
-																									financial outlook
-																									has evolved
-																									significantly. Their
-																									tailored services
-																									and insightful
-																									advice provided the
-																									clarity needed to
-																									navigate decisions
-																									confidently, making
-																									a positive impact on
-																									our financial
-																									journey."</p>
+																								<p>"I’ve tried several investment platforms, but none compare to FideleFinance. Their personalized investment plans and market insights have helped me grow my portfolio significantly in just a few months."</p>
 																							</div>
 																						</div>
 																					</div>
@@ -1138,13 +1202,13 @@
 																							class="bdt-ep-review-card-carousel-content">
 																							<h3
 																								class="bdt-ep-review-card-carousel-name">
-																								- Enagol Ame, CEO of
-																								Flash </h3>
+																								- James K., Australia
+																							</h3>
 																							<div
 																								class="bdt-ep-review-card-carousel-text">
 																								<p>"FideleFinance exceeded our
 																									expectations in
-																									financial guidance.
+																									financial guidance and investment.
 																									Their personalized
 																									services and
 																									strategic insights
@@ -2215,7 +2279,7 @@
 														data-widget_type="heading.default">
 														<div class="elementor-widget-container">
 															<h5 class="elementor-heading-title elementor-size-default">
-																Product</h5>
+																Account</h5>
 														</div>
 													</div>
 													<div class="elementor-element elementor-element-cb0c394 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
@@ -2224,23 +2288,18 @@
 														<div class="elementor-widget-container">
 															<ul class="elementor-icon-list-items">
 																<li class="elementor-icon-list-item">
-																	<a href="#">
+																	<a href="/user/sign-in">
 																		<span
-																			class="elementor-icon-list-text">Overview</span>
+																			class="elementor-icon-list-text">Sign In</span>
 																	</a>
 																</li>
 																<li class="elementor-icon-list-item">
-																	<a href="#">
+																	<a href="/user/sign-up">
 																		<span
-																			class="elementor-icon-list-text">Features</span>
+																			class="elementor-icon-list-text">Sign Up</span>
 																	</a>
 																</li>
-																<li class="elementor-icon-list-item">
-																	<a href="#">
-																		<span
-																			class="elementor-icon-list-text">Solutions</span>
-																	</a>
-																</li>
+																
 																
 															</ul>
 														</div>
@@ -2264,21 +2323,21 @@
 														<div class="elementor-widget-container">
 															<ul class="elementor-icon-list-items">
 																<li class="elementor-icon-list-item">
-																	<a href="#">
+																	<a href="/about">
 																		<span class="elementor-icon-list-text">About
 																			Us</span>
 																	</a>
 																</li>
 																<li class="elementor-icon-list-item">
-																	<a href="#">
+																	<a href="/contact">
 																		<span
-																			class="elementor-icon-list-text">Careers</span>
+																			class="elementor-icon-list-text">Contact</span>
 																	</a>
 																</li>
 																<li class="elementor-icon-list-item">
-																	<a href="#">
+																	<a href="/services">
 																		<span
-																			class="elementor-icon-list-text">News</span>
+																			class="elementor-icon-list-text">Services</span>
 																	</a>
 																</li>
 																
