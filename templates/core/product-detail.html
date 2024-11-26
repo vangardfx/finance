@@ -1,5 +1,5 @@
 {% extends "partials/auth.html" %}
-{% load static %}
+{% load static humanize %}
 {% block title %}Investment Plan – Explore and Choose the Best Options{% endblock title %}
 {% block content %}
 <body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast=""
@@ -230,7 +230,7 @@
 
                   <div class="col-md-12">
                 
-     
+                    <p>Available Balance: ${{request.user.total_deposit|floatformat:2|intcomma}}</p>
                     <div class="form-group">
                       <label class="form-label">Amount to invest</label>
                       <input type="number" name="amount" max="{{p.max_amount}}" min="{{p.least_amount}}" class="form-control" placeholder="${{p.least_amount}} - ${{p.max_amount}}" 
@@ -242,7 +242,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="form-label">Least Amount</label>
-                      <input type="text" value="${{p.least_amount}}" name="least_amount"  class="form-control"
+                      <input type="text" value="${{p.least_amount|intcomma}}" name="least_amount"  class="form-control"
                       disabled />
                     </div>
                     
@@ -251,7 +251,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="form-label">Max Amount</label>
-                      <input type="text" value="${{p.max_amount}}" name="max_amount"  class="form-control"
+                      <input type="text" value="${{p.max_amount|intcomma}}" name="max_amount"  class="form-control"
                       disabled />
                     </div>
                   </div>

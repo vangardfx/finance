@@ -1,4 +1,4 @@
-{% load static %}
+{% load static humanize %}
 <!doctype html>
 <html lang="en-US">
 
@@ -1049,7 +1049,7 @@
 															<div class="elementor-element elementor-element-7fb21f5 bdt-icon-type-icon elementor-position-top bdt-icon-effect-none elementor-widget elementor-widget-bdt-advanced-icon-box"
 																data-id="7fb21f5" data-element_type="widget"
 																data-widget_type="bdt-advanced-icon-box.default">
-																<div class="elementor-widget-container" style="background: #AEAEAE1A; border-radius: 20px; padding: 20px; border-color: #8F8F8F2E; border-style: solid; border-width: 1px;">
+																<div class="elementor-widget-container" style="background: #AEAEAE1A; border-radius: 20px; padding: 20px; border-color: #fff; border-style: solid; border-width: 1px;">
 																	<div class="bdt-ep-advanced-icon-box">
 																		<div
 																			class="bdt-ep-advanced-icon-box-content">
@@ -1060,12 +1060,12 @@
 																					{{p.title}} </span>
 																			</h4>
 																			<div
-																				class="bdt-ep-advanced-icon-box-sub-title" style="font-weight: 600 !important; font-size: 25px; padding-top: 25px;">
+																				class="bdt-ep-advanced-icon-box-sub-title" style="font-weight: 600 !important; font-size: 22px; padding-top: 25px;">
 																				${{p.least_amount|intcomma}} - ${{p.max_amount|intcomma}} </div>
 																		    <div
 																				class="bdt-ep-advanced-icon-box-description"  >
 																		
-																				<p>Crypto/Stocks/Forex</p>
+																				<p style="font-size: 14px;">Crypto/Stocks/Forex</p>
 																			</div>
 																			
 																		</div>
@@ -1113,7 +1113,7 @@
 																		</ul>
 																	</div>
 																</div>
-															<a href="{% url "core:plan-detail" p.pid %}" class="btn btn-lg rounded-2" style="background: #0050b2; color: #fff;  width: 100%; cursor: pointer; margin-bottom: 10px;">Activate Plan</a>
+															<a href="{% url "core:plan-detail" p.pid %}" class="btn btn-lg" style="background: #0050b2; color: #fff;  width: 100%; cursor: pointer; margin-bottom: 10px; border-radius: 0.8rem">Activate Plan</a>
 
 																</div>
 															</div>
