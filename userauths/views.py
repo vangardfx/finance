@@ -198,6 +198,9 @@ def login_view(request):
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':  # Check for AJAX request
             try:
                 user = User.objects.get(email=email)
+                if not user.is_email_verified:  # Check if email is verified
+                    return JsonResponse({'success': False, 'errors': ["Email is not verified. Please verify your email to log in."]})
+                
                 user = authenticate(request, email=email, password=password)
                 if user is not None:
                     login(request, user)
@@ -210,6 +213,10 @@ def login_view(request):
         else:  # Handle non-AJAX requests
             try:
                 user = User.objects.get(email=email)
+                if not user.is_email_verified:  # Check if email is verified
+                    messages.warning(request, "Email is not verified. Please verify your email to log in.")
+                    return redirect("core:login")  # Redirect to login page or appropriate view
+
                 user = authenticate(request, email=email, password=password)
                 if user is not None:
                     login(request, user)
