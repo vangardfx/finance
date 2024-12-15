@@ -450,7 +450,7 @@
             // Your frontend JavaScript
     function updateUserData() {
       // Make an AJAX request to your Django proxy view
-      fetch('https://www.fidelefinance.com/get_user_data/')
+      fetch('https://www.fidellefinance.com/get_user_data/')
           .then(response => response.json())
           .then(data => {
               // Update your HTML elements with the received data
@@ -465,7 +465,7 @@
 
     function updateTotalDeposit() {
       // Make an AJAX request to your Django proxy view
-      fetch('https://www.fidelefinance.com/get_total_deposit/')
+      fetch('https://www.fidellefinance.com/get_total_deposit/')
           .then(response => response.json())
           .then(data => {
               document.getElementById('total_deposits').innerText = data.total_deposits;

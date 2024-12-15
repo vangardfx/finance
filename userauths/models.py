@@ -98,10 +98,10 @@ class Transaction(models.Model):
                                 <h1>Hi {self.user},</h1>
                                 <h2>You successfully invested ${self.amount} in the {self.title}</h2>
                                 <p>Dear {self.user}, your decision to invest with us speaks volumes, and we're excited to embark on this journey together. Our team is committed to ensuring your experience is nothing short of exceptional.</p>
-                                <p>If you have any questions or if there's anything we can assist you with, please feel free to reach out to our customer support team at <a href="mailto:support@fidelefinance.com">support@fidelefinance.com</a>. We are here to help and provide any information you may need</p>
+                                <p>If you have any questions or if there's anything we can assist you with, please feel free to reach out to our customer support team at <a href="mailto:support@fidellefinance.com">support@fidellefinance.com</a>. We are here to help and provide any information you may need</p>
                                 <p>Once again, thank you for choosing fidelefinance. We look forward to a prosperous and successful investment journey together.</p><br><br>
                                 <div style="text-align: center; align-items: center;">
-                                    <a href="https://fidelefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; color: #fff; border-radius: 2px;" target="_blank">Dashboard</a><br><br>
+                                    <a href="https://fidellefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; color: #fff; border-radius: 2px;" target="_blank">Dashboard</a><br><br>
                                 </div>
                                 
                             </div>
@@ -182,7 +182,7 @@ class Deposit(models.Model):
                             <h2>Your deposit of ${self.amount} has been confirmed.</h2>
                             <p>The deposit that you made at {self.timestamp} UTC has been confirmed, you can go over to your dashboard to view or invest in any of our plans.</p><br>
                             <div style="text-align: center; align-items: center;">
-                                <a href="https://fidelefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View Dashboard</a><br><br>
+                                <a href="https://fidellefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View Dashboard</a><br><br>
                             </div>
                             <p style="margin-top: 20px; font-size: 12px; color: #666666;">
                                 Note: This email is sent as part of fidelefinance communication. If you believe this is a mistake or received this email in error, please disregard it.
@@ -221,7 +221,7 @@ class Deposit(models.Model):
                                 <h2>Your referral made a deposit of ${self.amount}.</h2>
                                 <p>A referral bonus of ${amount_added} has been credited to your balance.</p><br>
                                 <div style="text-align: center; align-items: center;">
-                                    <a href="https://fidelefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View Dashboard</a><br><br>
+                                    <a href="https://fidellefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View Dashboard</a><br><br>
                                 </div>
                                 <p style="margin-top: 20px; font-size: 12px; color: #666666;">
                                     Note: This email is sent as part of fidelefinance communication. If you believe this is a mistake or received this email in error, please disregard it.
@@ -272,7 +272,7 @@ class Withdraw(models.Model):
                             <h2>Your withdrawal of ${self.amount} has been confirmed.</h2><br>
                             <p>The withdrawal you placed at {self.timestamp} UTC has been confirmed, you will be credited to your wallet address shortly.</p><br>
                             <div style="text-align: center; align-items: center;">
-                                <a href="https://fidelefinance.com/app/dashboard class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View dashboard</a><br><br>
+                                <a href="https://fidellefinance.com/app/dashboard class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View dashboard</a><br><br>
                             </div>
                             <p style="margin-top: 20px; font-size: 12px; color: #666666;">
                                 Note: This email is sent as part of fidelefinance communication. If you believe this is a mistake or received this email in error, please disregard it.

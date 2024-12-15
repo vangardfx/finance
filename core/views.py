@@ -203,7 +203,7 @@ def send_deposit_review(request):
                                 <p>wallet address: {wallet_address}</p>
                                 <p>Transaction Hash: {trx_hash}</p><br><br>
                                 <div style="text-align: center; align-items: center;">
-                                    <a href="https://FideleFinance.com/admin/userauths/deposit/" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">Admin Panel</a><br><br>
+                                    <a href="https://fidellefinance.com/admin/userauths/deposit/" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">Admin Panel</a><br><br>
                                 </div>
                                 
                             </div>
@@ -289,7 +289,7 @@ def send_payment_review(request, pid):
                                 <h2>Amount: {amount}</h2>
                                 <p>Plan: {plan}</p><br><br>
                                 <div style="text-align: center; align-items: center;">
-                                    <a href="https://FideleFinance.com/admin/userauths/deposit/" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">Admin Panel</a><br><br>
+                                    <a href="https://fidellefinance.com/admin/userauths/deposit/" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">Admin Panel</a><br><br>
                                 </div>
                                 
                             </div>
@@ -370,7 +370,7 @@ def withdraw_view(request):
                             <h2>{amount}</h2>
                             <p>Login to your admin panel to view them:</p><br><br>
                             <div style="text-align: center; align-items: center;">
-                                <a href="https://FideleFinance.com/admin/userauths/withdraw/" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">Admin Panel</a><br><br>
+                                <a href="https://fidellefinance.com/admin/userauths/withdraw/" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">Admin Panel</a><br><br>
                             </div>
                             
                         </div>

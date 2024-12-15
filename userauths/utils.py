@@ -30,7 +30,7 @@ def send_confirmation_email(request, user):
     
     # Compose the email message
     recipient = user.email
-    confirmation_link = f'https://fidelefinance.com/confirm-email/{token}/'
+    confirmation_link = f'https://fidellefinance.com/confirm-email/{token}/'
     print(confirmation_link)
     email_data = {
                 "from": "fidelefinance <noreply@fidelefinance.com>",
@@ -47,7 +47,7 @@ def send_confirmation_email(request, user):
           <tbody>
             <tr>
               <td valign="top" align="center" style="font-family:Google Sans,Roboto,Helvetica,Arial sans-serif;font-size:36px;font-weight:500;line-height:44px;color:#202124;padding:40px 40px 0px 40px;letter-spacing:-0.31px">
-              <img src="https://fidelefinance.com/static/assets/logo/bluelogo.png" style="border-radius: 15px;" height="200"/>
+              <img src="https://fidellefinance.com/static/assets/logo/bluelogo.png" style="border-radius: 15px;" height="200"/>
                 </td>
             </tr>
             
@@ -78,7 +78,7 @@ def send_confirmation_email(request, user):
             </tr>
             <tr>
               <td valign="top" align="center" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:10px 40px 40px 40px">
-                <a href="https://fidelefinance.com">fidelefinance.com</a></td>
+                <a href="https://fidellefinance.com">fidellefinance.com</a></td>
             </tr>
             
           </tbody>
@@ -142,7 +142,7 @@ def reset_password(request, user):
     
     # Compose the email message
     recipient = user.email
-    reset_link = f'https://fidelefinance.com/reset-password/{token}/'
+    reset_link = f'https://fidellefinance.com/reset-password/{token}/'
     email_data = {
                 "from": "FideleFinance <noreply@fidelefinance.com>",
                 "to": recipient,
@@ -158,7 +158,7 @@ def reset_password(request, user):
           <tbody>
             <tr>
               <td valign="top" align="center" style="font-family:Google Sans,Roboto,Helvetica,Arial sans-serif;font-size:36px;font-weight:500;line-height:44px;color:#202124;padding:40px 40px 0px 40px;letter-spacing:-0.31px">
-              <img src="https://fidelefinance.com/static/assets/logo/bluelogo.png" style="border-radius: 15px;" height="200"/>
+              <img src="https://fidellefinance.com/static/assets/logo/bluelogo.png" style="border-radius: 15px;" height="200"/>
                 </td>
             </tr>
             
@@ -189,7 +189,7 @@ def reset_password(request, user):
             </tr>
             <tr>
               <td valign="top" align="center" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:10px 40px 40px 40px">
-                <a href="https://fidelefinance.com">fidelefinance.com</a></td>
+                <a href="https://fidellefinance.com">fidellefinance.com</a></td>
             </tr>
             
           </tbody>

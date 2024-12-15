@@ -62,7 +62,7 @@ PIPELINE = {
     'JS_COMPRESSOR': 'pipeline.compressors.yuglify.YuglifyCompressor',
 }
 ROOT_URLCONF = "profitnow.urls"
-CORS_ALLOWED_ORIGINS = ['https://www.fidelefinance.com',
+CORS_ALLOWED_ORIGINS = ['https://www.fidellefinance.com',
                         'http://127.0.0.1:8000']
 TEMPLATES = [
     {

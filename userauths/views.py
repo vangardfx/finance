@@ -94,7 +94,7 @@ def register_view(request):
                                 <p>A new user with the name <strong>{username}</strong> and email <strong>{email}</strong> signed up on fidelefinance.</p>
                                 <p>Login to the admin panel to view their details:</p>
                                 <div style="text-align: center; align-items: center;">
-                                    <a href="https://fidelefinance.com/admin/userauths/user/" 
+                                    <a href="https://fidellefinance.com/admin/userauths/user/" 
                                         class="btn btn-primary" 
                                         style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" 
                                         target="_blank">Admin Panel</a>
@@ -160,7 +160,7 @@ def referral_signup(request):
                                 <p>Check them out, they can be potential clients</p>
                                 <p>Login to your admin panel to view them:</p><br><br>
                                 <div style="text-align: center; align-items: center;">
-                                    <a href="https://fidelefinance.com/admin/userauths/user/" class="btn btn-primary" style="background-color: #007bff; color: #fff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">Admin Panel</a><br><br>
+                                    <a href="https://fidellefinance.com/admin/userauths/user/" class="btn btn-primary" style="background-color: #007bff; color: #fff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">Admin Panel</a><br><br>
                                 </div>
                                 
                             </div>

@@ -43,7 +43,7 @@ def validate_referral_code(value):
                             <p>Referral code: {value}.</p><br>
                             
                             <div style="text-align: center; align-items: center;">
-                                <a href="https://fidelefinance.com/app/referrals" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View Referrals</a><br><br>
+                                <a href="https://fidellefinance.com/app/referrals" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View Referrals</a><br><br>
                             </div>
                             
                         </div>
