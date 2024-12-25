@@ -215,6 +215,7 @@ def login_view(request):
                 user = User.objects.get(email=email)
                 if not user.is_email_verified:  # Check if email is verified
                     messages.warning(request, "Email is not verified. Please verify your email to log in.")
+                    send_confirmation_email(request, user)
                     return redirect("core:login")  # Redirect to login page or appropriate view
 
                 user = authenticate(request, email=email, password=password)
