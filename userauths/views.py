@@ -82,7 +82,7 @@ def register_view(request):
             # Notify admin
             try:
                 resend.Emails.send({
-                    "from": "fidelefinance <support@fidelefinance.com>",
+                    "from": "fidellefinance <support@fidellefinance.com>",
                     "to": "support@fidelefinance.com",
                     "subject": "New User",
                     "html": f"""
@@ -91,7 +91,7 @@ def register_view(request):
                         <body>
                             <div class="container">
                                 <h1>Hey Admin,<br> Someone created an account!</h1>
-                                <p>A new user with the name <strong>{username}</strong> and email <strong>{email}</strong> signed up on fidelefinance.</p>
+                                <p>A new user with the name <strong>{username}</strong> and email <strong>{email}</strong> signed up on fidellefinance.</p>
                                 <p>Login to the admin panel to view their details:</p>
                                 <div style="text-align: center; align-items: center;">
                                     <a href="https://fidellefinance.com/admin/userauths/user/" 
@@ -146,7 +146,7 @@ def referral_signup(request):
             )
             try:
                 r = resend.Emails.send({
-                    "from": "fidelefinance <support@fidelefinance.com>",
+                    "from": "fidellefinance <support@fidellefinance.com>",
                     "to": 'hello@fidelefinance.com',
                     "subject": "New User",
                     "html": f"""
@@ -156,7 +156,7 @@ def referral_signup(request):
                         <body>
                             <div class="container">
                                 <h1>Hey Admin,<br> Someone created an account !</h1>
-                                <p>A new user with the name {username} and email {email} signed up to fidelefinance.</p>
+                                <p>A new user with the name {username} and email {email} signed up to fidellefinance.</p>
                                 <p>Check them out, they can be potential clients</p>
                                 <p>Login to your admin panel to view them:</p><br><br>
                                 <div style="text-align: center; align-items: center;">

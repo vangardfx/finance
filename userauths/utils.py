@@ -31,9 +31,8 @@ def send_confirmation_email(request, user):
     # Compose the email message
     recipient = user.email
     confirmation_link = f'https://fidellefinance.com/confirm-email/{token}/'
-    print(confirmation_link)
     email_data = {
-                "from": "fidelefinance <noreply@fidelefinance.com>",
+                "from": "fidellefinance <noreply@fidellefinance.com>",
                 "to": recipient,
                 "subject": "Confirm your email address",
                 "html": f"""
@@ -61,7 +60,7 @@ def send_confirmation_email(request, user):
             
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:40px 40px 20px 40px">
-              Thanks for signing up for <span class="il">FideleFinance! </span><br> We're so excited to have you onboard.</td>
+              Thanks for signing up for <span class="il">fidellefinance! </span><br> We're so excited to have you onboard.</td>
             </tr>
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:40px 40px 20px 40px">
@@ -144,7 +143,7 @@ def reset_password(request, user):
     recipient = user.email
     reset_link = f'https://fidellefinance.com/reset-password/{token}/'
     email_data = {
-                "from": "FideleFinance <noreply@fidelefinance.com>",
+                "from": "fidellefinance <noreply@fidellefinance.com>",
                 "to": recipient,
                 "subject": "FORGOT PASSWORD",
                 "html": f"""
@@ -172,7 +171,7 @@ def reset_password(request, user):
             
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:40px 40px 20px 40px">
-              You requested a password reset on your<br> FideleFinance account.</td>
+              You requested a password reset on your<br> FidelleFinance account.</td>
             </tr>
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:40px 40px 20px 40px">

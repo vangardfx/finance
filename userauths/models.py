@@ -49,7 +49,7 @@ class User(AbstractUser):
     def full_name(self):
         return self.username
     class Meta:
-        verbose_name = "fidelefinance User"
+        verbose_name = "fidellefinance User"
         
 
 
@@ -87,7 +87,7 @@ class Transaction(models.Model):
             self.confirmed = True
             self.save()
             r = resend.Emails.send({
-                    "from": "fidelefinance <support@fidelefinance.com>",
+                    "from": "fidellefinance <support@fidellefinance.com>",
                     "to": self.user.email,
                     "subject": "Successful Investment",
                     "html": f"""
@@ -99,7 +99,7 @@ class Transaction(models.Model):
                                 <h2>You successfully invested ${self.amount} in the {self.title}</h2>
                                 <p>Dear {self.user}, your decision to invest with us speaks volumes, and we're excited to embark on this journey together. Our team is committed to ensuring your experience is nothing short of exceptional.</p>
                                 <p>If you have any questions or if there's anything we can assist you with, please feel free to reach out to our customer support team at <a href="mailto:support@fidellefinance.com">support@fidellefinance.com</a>. We are here to help and provide any information you may need</p>
-                                <p>Once again, thank you for choosing fidelefinance. We look forward to a prosperous and successful investment journey together.</p><br><br>
+                                <p>Once again, thank you for choosing fidellefinance. We look forward to a prosperous and successful investment journey together.</p><br><br>
                                 <div style="text-align: center; align-items: center;">
                                     <a href="https://fidellefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; color: #fff; border-radius: 2px;" target="_blank">Dashboard</a><br><br>
                                 </div>
@@ -169,7 +169,7 @@ class Deposit(models.Model):
             self.confirmed = True
             self.save()
             r = resend.Emails.send({
-                "from": "fidelefinance <support@fidelefinance.com>",
+                "from": "fidellefinance <support@fidellefinance.com>",
                 "to": self.user.email,
                 "subject": f"Deposit has been confirmed",
                 "html": f"""
@@ -185,7 +185,7 @@ class Deposit(models.Model):
                                 <a href="https://fidellefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View Dashboard</a><br><br>
                             </div>
                             <p style="margin-top: 20px; font-size: 12px; color: #666666;">
-                                Note: This email is sent as part of fidelefinance communication. If you believe this is a mistake or received this email in error, please disregard it.
+                                Note: This email is sent as part of fidellefinance communication. If you believe this is a mistake or received this email in error, please disregard it.
                             </p>
                         </div>
 
@@ -208,7 +208,7 @@ class Deposit(models.Model):
                 referred_user.save(update_fields=['ref_bonus'])
                 amount_added = round(bonus_amount, 2)
                 r = resend.Emails.send({
-                    "from": "fidelefinance <support@fidelefinance.com>",
+                    "from": "fidellefinance <support@fidellefinance.com>",
                     "to": referred_user_email,
                     "subject": f"Your Referral Deposited",
                     "html": f"""
@@ -224,7 +224,7 @@ class Deposit(models.Model):
                                     <a href="https://fidellefinance.com/app/dashboard" class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View Dashboard</a><br><br>
                                 </div>
                                 <p style="margin-top: 20px; font-size: 12px; color: #666666;">
-                                    Note: This email is sent as part of fidelefinance communication. If you believe this is a mistake or received this email in error, please disregard it.
+                                    Note: This email is sent as part of fidellefinance communication. If you believe this is a mistake or received this email in error, please disregard it.
                                 </p>
                             </div>
 
@@ -259,7 +259,7 @@ class Withdraw(models.Model):
             self.save()
 
             r = resend.Emails.send({
-                "from": "fidelefinance <support@fidelefinance.com>",
+                "from": "fidellefinance <support@fidellefinance.com>",
                 "to": self.user.email,
                 "subject": f"Withdrawal has been confirmed",
                 "html": f"""
@@ -275,7 +275,7 @@ class Withdraw(models.Model):
                                 <a href="https://fidellefinance.com/app/dashboard class="btn btn-primary" style="background-color: #007bff; font-size: 16px; border-color: #007bff; padding: 10px 20px; border-radius: 2px;" target="_blank">View dashboard</a><br><br>
                             </div>
                             <p style="margin-top: 20px; font-size: 12px; color: #666666;">
-                                Note: This email is sent as part of fidelefinance communication. If you believe this is a mistake or received this email in error, please disregard it.
+                                Note: This email is sent as part of fidellefinance communication. If you believe this is a mistake or received this email in error, please disregard it.
                             </p>
                         </div>
 

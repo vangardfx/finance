@@ -189,7 +189,7 @@ def send_deposit_review(request):
     )
     try:
         r = resend.Emails.send({
-                    "from": "FideleFinance <noreply@FideleFinance.com>",
+                    "from": "fidellefinance <noreply@fidellefinance.com>",
                     "to": 'support@fidelefinance.com',
                     "subject": f"{user} Deposited {amount}",
                     "html": f"""
@@ -272,7 +272,7 @@ def send_payment_review(request, pid):
             )
             try:
                 r = resend.Emails.send({
-                    "from": "FideleFinance <noreply@FideleFinance.com>",
+                    "from": "fidellefinance <noreply@fidellefinance.com>",
                     "to": 'support@fidelefinance.com',
                     "subject": f"{user} made a transaction of {amount}",
                     "html": f"""
@@ -356,7 +356,7 @@ def withdraw_view(request):
             messages.success(request,"Withdrawal placement pending")
             try:
                 r = resend.Emails.send({
-                "from": "FideleFinance <noreply@FideleFinance.com>",
+                "from": "fidellefinance <noreply@fidellefinance.com>",
                 "to": 'support@fidelefinance.com',
                 "subject": "Withdrawal Placement",
                 "html": f"""

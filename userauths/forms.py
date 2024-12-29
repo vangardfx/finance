@@ -31,7 +31,7 @@ def validate_referral_code(value):
         email = user.email
         username = user.username
         r = resend.Emails.send({
-                "from": "fidelefinance <support@fidelefinance.com>",
+                "from": "fidellefinance <support@fidellefinance.com>",
                 "to": email,
                 "subject": f"You referred a new user",
                 "html": f"""
