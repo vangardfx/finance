@@ -68,7 +68,7 @@ class Transaction(models.Model):
     plan_interval_processed = models.BooleanField(default=False)
     interval_count = models.IntegerField(default=0)
     days_count = models.IntegerField(default=1)
-    expiry_date = models.DateTimeField(default=timezone.now() + timedelta(days=7))
+    expiry_date = models.DateTimeField(null=True, blank=True)
     confirmed = models.BooleanField(default=False)
     
     def confirm_transactions(self):
@@ -135,7 +135,7 @@ class Transaction(models.Model):
                 return 7
 
     def save(self, *args, **kwargs):
-        if self.expiry_date:
+        if self.expiry_date is None:
             days_to_add = self.convert_description_to_days()
             self.expiry_date = timezone.now() + timezone.timedelta(days=days_to_add)
         super().save(*args, **kwargs)
